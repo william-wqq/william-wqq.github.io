@@ -8,20 +8,24 @@
   <link rel="dns-prefetch" href="https://william-wqq.github.io">
   <title>hexo+GitHub Pages搭建个人博客 | William的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、前提在Windows10 X64环境安装操作 1、安装node.js和git node.js git  2、node.js是否成功安装12E:\www\blog&amp;gt;node -vv8.1.4 3、git是否成功安装12E:\www\blog&amp;gt;git --versiongit version 2.13.0.windows.1 如果两者都显示相应的版本号，接下来我们安装hexo 二、安装">
+  <meta name="description" content="前提在Windows10 X64环境安装操作Hexo 中文文档Hexo Themes列表 安装node.js和git node.js git  node.js是否成功安装12E:\www\blog&amp;gt;node -vv8.1.4">
 <meta name="keywords" content="hexo,git,node.js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo+GitHub Pages搭建个人博客">
 <meta property="og:url" content="https://william-wqq.github.io/2017/07/27/quick-build-blog/index.html">
 <meta property="og:site_name" content="William的博客">
-<meta property="og:description" content="一、前提在Windows10 X64环境安装操作 1、安装node.js和git node.js git  2、node.js是否成功安装12E:\www\blog&amp;gt;node -vv8.1.4 3、git是否成功安装12E:\www\blog&amp;gt;git --versiongit version 2.13.0.windows.1 如果两者都显示相应的版本号，接下来我们安装hexo 二、安装">
+<meta property="og:description" content="前提在Windows10 X64环境安装操作Hexo 中文文档Hexo Themes列表 安装node.js和git node.js git  node.js是否成功安装12E:\www\blog&amp;gt;node -vv8.1.4">
 <meta property="og:locale" content="zh">
 <meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/07/init_list.png">
 <meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/07/hexo_index.png">
-<meta property="og:updated_time" content="2017-07-27T09:08:15.327Z">
+<meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/07/new_repo.png">
+<meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/07/create_new_repo.png">
+<meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/07/repo_url.png">
+<meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/07/deploy_success_index.png">
+<meta property="og:updated_time" content="2017-07-28T00:42:21.706Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+GitHub Pages搭建个人博客">
-<meta name="twitter:description" content="一、前提在Windows10 X64环境安装操作 1、安装node.js和git node.js git  2、node.js是否成功安装12E:\www\blog&amp;gt;node -vv8.1.4 3、git是否成功安装12E:\www\blog&amp;gt;git --versiongit version 2.13.0.windows.1 如果两者都显示相应的版本号，接下来我们安装hexo 二、安装">
+<meta name="twitter:description" content="前提在Windows10 X64环境安装操作Hexo 中文文档Hexo Themes列表 安装node.js和git node.js git  node.js是否成功安装12E:\www\blog&amp;gt;node -vv8.1.4">
 <meta name="twitter:image" content="https://william-wqq.github.io/assets/article_img/2017/07/init_list.png">
   
     <link rel="alternative" href="/atom.xml" title="William的博客" type="application/atom+xml">
@@ -192,25 +196,39 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、前提"><a href="#一、前提" class="headerlink" title="一、前提"></a>一、前提</h2><p><code>在Windows10 X64环境安装操作</code></p>
-<h3 id="1、安装node-js和git"><a href="#1、安装node-js和git" class="headerlink" title="1、安装node.js和git"></a>1、安装node.js和git</h3><ul>
-<li><a href="http://nodejs.cn/download/" target="_blank" rel="external">node.js</a></li>
+        <h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p><code>在Windows10 X64环境安装操作</code><br><a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="external">Hexo 中文文档</a><br><a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo Themes列表</a></p>
+<h3 id="安装node-js和git"><a href="#安装node-js和git" class="headerlink" title="安装node.js和git"></a>安装node.js和git</h3><ul>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="external">node.js</a></li>
 <li><a href="https://git-scm.com/downloads" target="_blank" rel="external">git</a></li>
 </ul>
-<h3 id="2、node-js是否成功安装"><a href="#2、node-js是否成功安装" class="headerlink" title="2、node.js是否成功安装"></a>2、node.js是否成功安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;node -v</div><div class="line">v8.1.4</div></pre></td></tr></table></figure>
-<h3 id="3、git是否成功安装"><a href="#3、git是否成功安装" class="headerlink" title="3、git是否成功安装"></a>3、git是否成功安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;git --version</div><div class="line">git version 2.13.0.windows.1</div></pre></td></tr></table></figure>
+<h3 id="node-js是否成功安装"><a href="#node-js是否成功安装" class="headerlink" title="node.js是否成功安装"></a>node.js是否成功安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;node -v</div><div class="line">v8.1.4</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="git是否成功安装"><a href="#git是否成功安装" class="headerlink" title="git是否成功安装"></a>git是否成功安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;git --version</div><div class="line">git version 2.13.0.windows.1</div></pre></td></tr></table></figure>
 <p>如果两者都显示相应的版本号，接下来我们安装hexo</p>
-<h2 id="二、安装hexo"><a href="#二、安装hexo" class="headerlink" title="二、安装hexo"></a>二、安装hexo</h2><h3 id="1、全局安装"><a href="#1、全局安装" class="headerlink" title="1、全局安装"></a>1、全局安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;npm install -g hexo  #-g 表示全局安装</div></pre></td></tr></table></figure>
-<h3 id="2、hexo是否安装成功"><a href="#2、hexo是否安装成功" class="headerlink" title="2、hexo是否安装成功"></a>2、hexo是否安装成功</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;hexo -v</div><div class="line">hexo: 3.3.8</div><div class="line">hexo-cli: 1.0.3</div><div class="line">os: Windows_NT 10.0.14393 win32 x64</div><div class="line">http_parser: 2.7.0</div><div class="line">node: 8.1.4</div><div class="line">v8: 5.8.283.41</div><div class="line">uv: 1.12.0</div><div class="line">zlib: 1.2.11</div><div class="line">ares: 1.10.1-DEV</div><div class="line">modules: 57</div><div class="line">openssl: 1.0.2l</div><div class="line">icu: 59.1</div><div class="line">unicode: 9.0</div><div class="line">cldr: 31.0.1</div><div class="line">tz: 2017b</div></pre></td></tr></table></figure>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><h3 id="全局安装"><a href="#全局安装" class="headerlink" title="全局安装"></a>全局安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;npm install -g hexo  #-g 表示全局安装</div></pre></td></tr></table></figure>
+<h3 id="hexo是否安装成功"><a href="#hexo是否安装成功" class="headerlink" title="hexo是否安装成功"></a>hexo是否安装成功</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;hexo -v</div><div class="line">hexo: 3.3.8</div><div class="line">hexo-cli: 1.0.3</div><div class="line">os: Windows_NT 10.0.14393 win32 x64</div><div class="line">http_parser: 2.7.0</div><div class="line">node: 8.1.4</div><div class="line">v8: 5.8.283.41</div><div class="line">uv: 1.12.0</div><div class="line">zlib: 1.2.11</div><div class="line">ares: 1.10.1-DEV</div><div class="line">modules: 57</div><div class="line">openssl: 1.0.2l</div><div class="line">icu: 59.1</div><div class="line">unicode: 9.0</div><div class="line">cldr: 31.0.1</div><div class="line">tz: 2017b</div></pre></td></tr></table></figure>
 <p>如果看到上述版本信息列出则说明hexo安装成功</p>
-<h3 id="3、初始化hexo"><a href="#3、初始化hexo" class="headerlink" title="3、初始化hexo"></a>3、初始化hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;hexo init</div></pre></td></tr></table></figure>
+<h3 id="初始化hexo"><a href="#初始化hexo" class="headerlink" title="初始化hexo"></a>初始化hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;hexo init</div></pre></td></tr></table></figure>
 <p>初始化成功后可以到blog文件夹看到如下目录<br><img src="/assets/article_img/2017/07/init_list.png" alt="init"></p>
-<h3 id="4、本地运行"><a href="#4、本地运行" class="headerlink" title="4、本地运行"></a>4、本地运行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;hexo server #开启服务  等价于hexo s</div></pre></td></tr></table></figure>
+<h3 id="本地运行"><a href="#本地运行" class="headerlink" title="本地运行"></a>本地运行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;hexo server #开启服务  等价于hexo s</div></pre></td></tr></table></figure>
 <p>然后在浏览器输入localhost:4000,会看到如下效果<br><img src="/assets/article_img/2017/07/hexo_index.png" alt="index"><br>如果无法访问，可能是端口号占用，更改服务端口号：<code>hexo s -p 5000</code></p>
-<h3 id="5、常用到的命令"><a href="#5、常用到的命令" class="headerlink" title="5、常用到的命令"></a>5、常用到的命令</h3><blockquote><p>hexo init  #执行站点的初始化<br>hexo g == hexo generate #生成静态页面。在生成时可以加上-d或–deploy参数在生成后立即部署。生成的静态文件在public文件夹下，没有则会自动建立。<br>hexo d == hexo deploy #将 .deploy 目录部署到 gitHub,也就是将public目录下生成的静态文件上传到某个特定的位置，部署时可以加上-g或–generate参数，在部署前先生成一遍静态文件。<br>hexo s == hexo server #开启预览访问端口（默认：4000，’ctr+c’关闭server）,在本地 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 启动一个hexo服务器，可以用来预览hexo站点的效果。<br>hexo n == hexo new  #新建一个markdown文件。<br>hexo new [layout] <title># [layout]是该文件的类型，取值有post、draft和page三种，分别对应新建文章、草稿、页面。在运行该命令时，会调用scaffolds下的对应模板。<br>hexo clean #清理Hexo缓存。该操作会强制Hexo清空已生成的全部静态文件以及Hexo自身的数据库，有时候相当有效（更换主题后建议运行）。<br>hexo publish <title>#发布某篇草稿（即将该markdown文件转移到_post文件夹下）</title></title></p>
+<h3 id="常用到的命令"><a href="#常用到的命令" class="headerlink" title="常用到的命令"></a>常用到的命令</h3><blockquote><p>hexo init  #执行站点的初始化<br>hexo g == hexo generate #生成静态页面。在生成时可以加上-d或–deploy参数在生成后立即部署。生成的静态文件在public文件夹下，没有则会自动建立。<br>hexo d == hexo deploy #将 .deploy 目录部署到 gitHub,也就是将public目录下生成的静态文件上传到某个特定的位置，部署时可以加上-g或–generate参数，在部署前先生成一遍静态文件。<br>hexo s == hexo server #开启预览访问端口（默认：4000，’ctr+c’关闭server）,在本地 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 启动一个hexo服务器，可以用来预览hexo站点的效果。<br>hexo n == hexo new  #新建一个markdown文件。<br>hexo new [layout] <title># [layout]是该文件的类型，取值有post、draft和page三种，分别对应新建文章、草稿、页面。在运行该命令时，会调用scaffolds下的对应模板。<br>hexo clean #清理Hexo缓存。该操作会强制Hexo清空已生成的全部静态文件以及Hexo自身的数据库，有时候相当有效（更换主题后建议运行）。<br>hexo publish <title>#发布某篇草稿（即将该markdown文件转移到_post文件夹下）</title></title></p>
 <p>#命令可以复合使用：<br>hexo clean &amp;&amp; hexo g -d</p>
 </blockquote>
-<h2 id="三、Github创建仓库"><a href="#三、Github创建仓库" class="headerlink" title="三、Github创建仓库"></a>三、Github创建仓库</h2>
+<h2 id="Github创建仓库"><a href="#Github创建仓库" class="headerlink" title="Github创建仓库"></a>Github创建仓库</h2><p>注册一个<a href="https://github.com/" target="_blank" rel="external">Github</a>账号，开始创建仓库<br><img src="/assets/article_img/2017/07/new_repo.png" alt="new_repo"><br>点击New repository<br><img src="/assets/article_img/2017/07/create_new_repo.png" alt="create_new_repo"><br>创建成功后，我们得到远程仓库的地址<br><img src="/assets/article_img/2017/07/repo_url.png" alt="repo_url"></p>
+<h3 id="下载yilia主题的模板"><a href="#下载yilia主题的模板" class="headerlink" title="下载yilia主题的模板"></a>下载yilia主题的模板</h3><p>一个简洁优雅的hexo主题,作者 <a href="https://github.com/litten" target="_blank" rel="external">litten</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia</div></pre></td></tr></table></figure></p>
+<p>我们发现blog博客的themes文件夹多一个yilia文件，说明我们下载成功</p>
+<h3 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置_config.yml</h3><p>在blog/sources 创建assets/img目录,放入网站图标和你的头像url</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">title: William的博客</div><div class="line">subtitle: 伟大的人不是生下来就伟大的，而是在成长过程中显示其伟大的。</div><div class="line">description: Laravel、Linux、Mysql、PHP、Redis、技术爱好者，喜欢追求新鲜的事物，想通过微博来记录学习技术的点滴过程，同时也可以分享自己的故事</div><div class="line">author: William</div><div class="line"></div><div class="line">#图标</div><div class="line">favicon: /assets/img/favicon.ico</div><div class="line"></div><div class="line">#你的头像url</div><div class="line">avatar: /assets/img/william.png</div><div class="line"></div><div class="line">theme: yilia  #修改模板landscape改为yilia</div><div class="line"></div><div class="line">deploy: #远程仓库地址</div><div class="line">  type: git</div><div class="line">  repo: https://github.com/william-wqq/william-wqq.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<h3 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;hexo generate #等价于 hexo g</div></pre></td></tr></table></figure>
+<p>生成public文件，里面包含生成静态文件</p>
+<h3 id="部署hexo到Github"><a href="#部署hexo到Github" class="headerlink" title="部署hexo到Github"></a>部署hexo到Github</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;hexo deploy #等价于 hexo d</div></pre></td></tr></table></figure>
+<p>如果部署失败<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;hexo deploy</div><div class="line">ERROR Deployer not found: git</div></pre></td></tr></table></figure></p>
+<p>输入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+<p>解决后重新部署 <code>INFO  Deploy done: git</code>,部署成功</p>
+<h3 id="本地运行-1"><a href="#本地运行-1" class="headerlink" title="本地运行"></a>本地运行</h3><p>开启服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;hexo server</div></pre></td></tr></table></figure></p>
+<p>在浏览器分别出入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 和<a href="http://william-wqq.github.io">http://william-wqq.github.io</a> 都能看到如下界面<br><img src="/assets/article_img/2017/07/deploy_success_index.png" alt="index"><br>一个简单的博客就搭建成功了，它应该还包括评论、相册等基本的功能，我们有时间在去讨论这些。</p>
+
       
 
       
@@ -299,16 +317,6 @@
 </article>
 
   
-<nav id="article-nav">
-  
-  
-    <a href="/2017/07/25/essay/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">我的小感想</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -330,7 +338,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、前提"><span class="toc-number">1.</span> <span class="toc-text">一、前提</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、安装node-js和git"><span class="toc-number">1.1.</span> <span class="toc-text">1、安装node.js和git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、node-js是否成功安装"><span class="toc-number">1.2.</span> <span class="toc-text">2、node.js是否成功安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、git是否成功安装"><span class="toc-number">1.3.</span> <span class="toc-text">3、git是否成功安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、安装hexo"><span class="toc-number">2.</span> <span class="toc-text">二、安装hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1、全局安装"><span class="toc-number">2.1.</span> <span class="toc-text">1、全局安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2、hexo是否安装成功"><span class="toc-number">2.2.</span> <span class="toc-text">2、hexo是否安装成功</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3、初始化hexo"><span class="toc-number">2.3.</span> <span class="toc-text">3、初始化hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、本地运行"><span class="toc-number">2.4.</span> <span class="toc-text">4、本地运行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、常用到的命令"><span class="toc-number">2.5.</span> <span class="toc-text">5、常用到的命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三、Github创建仓库"><span class="toc-number">3.</span> <span class="toc-text">三、Github创建仓库</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前提"><span class="toc-number">1.</span> <span class="toc-text">前提</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装node-js和git"><span class="toc-number">1.1.</span> <span class="toc-text">安装node.js和git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#node-js是否成功安装"><span class="toc-number">1.2.</span> <span class="toc-text">node.js是否成功安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#git是否成功安装"><span class="toc-number">1.3.</span> <span class="toc-text">git是否成功安装</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装hexo"><span class="toc-number">2.</span> <span class="toc-text">安装hexo</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#全局安装"><span class="toc-number">2.1.</span> <span class="toc-text">全局安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo是否安装成功"><span class="toc-number">2.2.</span> <span class="toc-text">hexo是否安装成功</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#初始化hexo"><span class="toc-number">2.3.</span> <span class="toc-text">初始化hexo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本地运行"><span class="toc-number">2.4.</span> <span class="toc-text">本地运行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常用到的命令"><span class="toc-number">2.5.</span> <span class="toc-text">常用到的命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Github创建仓库"><span class="toc-number">3.</span> <span class="toc-text">Github创建仓库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#下载yilia主题的模板"><span class="toc-number">3.1.</span> <span class="toc-text">下载yilia主题的模板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置-config-yml"><span class="toc-number">3.2.</span> <span class="toc-text">配置_config.yml</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成静态文件"><span class="toc-number">3.3.</span> <span class="toc-text">生成静态文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#部署hexo到Github"><span class="toc-number">3.4.</span> <span class="toc-text">部署hexo到Github</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#本地运行-1"><span class="toc-number">3.5.</span> <span class="toc-text">本地运行</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -456,18 +464,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
               </li>
             
             <div class="clearfix"></div>

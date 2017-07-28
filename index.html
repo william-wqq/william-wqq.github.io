@@ -189,25 +189,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一、前提"><a href="#一、前提" class="headerlink" title="一、前提"></a>一、前提</h2><p><code>在Windows10 X64环境安装操作</code></p>
-<h3 id="1、安装node-js和git"><a href="#1、安装node-js和git" class="headerlink" title="1、安装node.js和git"></a>1、安装node.js和git</h3><ul>
-<li><a href="http://nodejs.cn/download/" target="_blank" rel="external">node.js</a></li>
+        <h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p><code>在Windows10 X64环境安装操作</code><br><a href="https://hexo.io/zh-cn/docs/commands.html" target="_blank" rel="external">Hexo 中文文档</a><br><a href="https://hexo.io/themes/" target="_blank" rel="external">Hexo Themes列表</a></p>
+<h3 id="安装node-js和git"><a href="#安装node-js和git" class="headerlink" title="安装node.js和git"></a>安装node.js和git</h3><ul>
+<li><a href="https://nodejs.org/en/" target="_blank" rel="external">node.js</a></li>
 <li><a href="https://git-scm.com/downloads" target="_blank" rel="external">git</a></li>
 </ul>
-<h3 id="2、node-js是否成功安装"><a href="#2、node-js是否成功安装" class="headerlink" title="2、node.js是否成功安装"></a>2、node.js是否成功安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;node -v</div><div class="line">v8.1.4</div></pre></td></tr></table></figure>
-<h3 id="3、git是否成功安装"><a href="#3、git是否成功安装" class="headerlink" title="3、git是否成功安装"></a>3、git是否成功安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;git --version</div><div class="line">git version 2.13.0.windows.1</div></pre></td></tr></table></figure>
-<p>如果两者都显示相应的版本号，接下来我们安装hexo</p>
-<h2 id="二、安装hexo"><a href="#二、安装hexo" class="headerlink" title="二、安装hexo"></a>二、安装hexo</h2><h3 id="1、全局安装"><a href="#1、全局安装" class="headerlink" title="1、全局安装"></a>1、全局安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;npm install -g hexo  #-g 表示全局安装</div></pre></td></tr></table></figure>
-<h3 id="2、hexo是否安装成功"><a href="#2、hexo是否安装成功" class="headerlink" title="2、hexo是否安装成功"></a>2、hexo是否安装成功</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;hexo -v</div><div class="line">hexo: 3.3.8</div><div class="line">hexo-cli: 1.0.3</div><div class="line">os: Windows_NT 10.0.14393 win32 x64</div><div class="line">http_parser: 2.7.0</div><div class="line">node: 8.1.4</div><div class="line">v8: 5.8.283.41</div><div class="line">uv: 1.12.0</div><div class="line">zlib: 1.2.11</div><div class="line">ares: 1.10.1-DEV</div><div class="line">modules: 57</div><div class="line">openssl: 1.0.2l</div><div class="line">icu: 59.1</div><div class="line">unicode: 9.0</div><div class="line">cldr: 31.0.1</div><div class="line">tz: 2017b</div></pre></td></tr></table></figure>
-<p>如果看到上述版本信息列出则说明hexo安装成功</p>
-<h3 id="3、初始化hexo"><a href="#3、初始化hexo" class="headerlink" title="3、初始化hexo"></a>3、初始化hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;hexo init</div></pre></td></tr></table></figure>
-<p>初始化成功后可以到blog文件夹看到如下目录<br><img src="/assets/article_img/2017/07/init_list.png" alt="init"></p>
-<h3 id="4、本地运行"><a href="#4、本地运行" class="headerlink" title="4、本地运行"></a>4、本地运行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;hexo server #开启服务  等价于hexo s</div></pre></td></tr></table></figure>
-<p>然后在浏览器输入localhost:4000,会看到如下效果<br><img src="/assets/article_img/2017/07/hexo_index.png" alt="index"><br>如果无法访问，可能是端口号占用，更改服务端口号：<code>hexo s -p 5000</code></p>
-<h3 id="5、常用到的命令"><a href="#5、常用到的命令" class="headerlink" title="5、常用到的命令"></a>5、常用到的命令</h3><blockquote><p>hexo init  #执行站点的初始化<br>hexo g == hexo generate #生成静态页面。在生成时可以加上-d或–deploy参数在生成后立即部署。生成的静态文件在public文件夹下，没有则会自动建立。<br>hexo d == hexo deploy #将 .deploy 目录部署到 gitHub,也就是将public目录下生成的静态文件上传到某个特定的位置，部署时可以加上-g或–generate参数，在部署前先生成一遍静态文件。<br>hexo s == hexo server #开启预览访问端口（默认：4000，’ctr+c’关闭server）,在本地 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 启动一个hexo服务器，可以用来预览hexo站点的效果。<br>hexo n == hexo new  #新建一个markdown文件。<br>hexo new [layout] <title># [layout]是该文件的类型，取值有post、draft和page三种，分别对应新建文章、草稿、页面。在运行该命令时，会调用scaffolds下的对应模板。<br>hexo clean #清理Hexo缓存。该操作会强制Hexo清空已生成的全部静态文件以及Hexo自身的数据库，有时候相当有效（更换主题后建议运行）。<br>hexo publish <title>#发布某篇草稿（即将该markdown文件转移到_post文件夹下）</title></title></p>
-<p>#命令可以复合使用：<br>hexo clean &amp;&amp; hexo g -d</p>
-</blockquote>
-<h2 id="三、Github创建仓库"><a href="#三、Github创建仓库" class="headerlink" title="三、Github创建仓库"></a>三、Github创建仓库</h2>
+<h3 id="node-js是否成功安装"><a href="#node-js是否成功安装" class="headerlink" title="node.js是否成功安装"></a>node.js是否成功安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;node -v</div><div class="line">v8.1.4</div></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2017/07/27/quick-build-blog/#more">more >></a>
+        
       
 
       
@@ -239,161 +229,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/07/27/quick-build-blog/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-essay" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/25/essay/">我的小感想</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/25/essay/" class="archive-article-date">
-  	<time datetime="2017-07-25T02:35:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1、生活的乐趣"><a href="#1、生活的乐趣" class="headerlink" title="1、生活的乐趣"></a>1、生活的乐趣</h2><p>我常常在想生活的乐趣究竟何在？是我没对于生活没有给予希望还是？还是生活态度在作祟<br><blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
-<footer><strong>David Levithan</strong><cite>--Wide Awake</cite></footer></blockquote></p>
-        
-          <a class="article-more-a" href="/2017/07/25/essay/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">感悟</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/25/essay/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/07/25/test/">Test</a>
-    </h1>
-  
-
-        
-        <a href="/2017/07/25/test/" class="archive-article-date">
-  	<time datetime="2017-07-25T01:51:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">这是我的第一篇文章</div></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">测试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/07/25/test/">展开全文 >></a>
         </p>
       
 
@@ -521,18 +356,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">感悟</a>
               </li>
             
             <div class="clearfix"></div>
