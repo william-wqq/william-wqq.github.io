@@ -16,17 +16,17 @@
 <meta property="og:site_name" content="William的博客">
 <meta property="og:description" content="前提在Windows10 X64环境安装操作Hexo 中文文档Hexo Themes列表 安装node.js和git node.js git  node.js是否成功安装12E:\www\blog&amp;gt;node -vv8.1.4">
 <meta property="og:locale" content="zh">
-<meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/07/init_list.png">
 <meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/07/hexo_index.png">
 <meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/07/new_repo.png">
 <meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/07/create_new_repo.png">
 <meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/07/repo_url.png">
 <meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/07/deploy_success_index.png">
-<meta property="og:updated_time" content="2017-07-28T00:42:21.706Z">
+<meta property="og:image" content="https://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png">
+<meta property="og:updated_time" content="2017-07-28T03:04:48.615Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+GitHub Pages搭建个人博客">
 <meta name="twitter:description" content="前提在Windows10 X64环境安装操作Hexo 中文文档Hexo Themes列表 安装node.js和git node.js git  node.js是否成功安装12E:\www\blog&amp;gt;node -vv8.1.4">
-<meta name="twitter:image" content="https://william-wqq.github.io/assets/article_img/2017/07/init_list.png">
+<meta name="twitter:image" content="https://william-wqq.github.io/assets/article_img/2017/07/hexo_index.png">
   
     <link rel="alternative" href="/atom.xml" title="William的博客" type="application/atom+xml">
   
@@ -203,7 +203,7 @@
 <h3 id="hexo是否安装成功"><a href="#hexo是否安装成功" class="headerlink" title="hexo是否安装成功"></a>hexo是否安装成功</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;hexo -v</div><div class="line">hexo: 3.3.8</div><div class="line">hexo-cli: 1.0.3</div><div class="line">os: Windows_NT 10.0.14393 win32 x64</div><div class="line">http_parser: 2.7.0</div><div class="line">node: 8.1.4</div><div class="line">v8: 5.8.283.41</div><div class="line">uv: 1.12.0</div><div class="line">zlib: 1.2.11</div><div class="line">ares: 1.10.1-DEV</div><div class="line">modules: 57</div><div class="line">openssl: 1.0.2l</div><div class="line">icu: 59.1</div><div class="line">unicode: 9.0</div><div class="line">cldr: 31.0.1</div><div class="line">tz: 2017b</div></pre></td></tr></table></figure>
 <p>如果看到上述版本信息列出则说明hexo安装成功</p>
 <h3 id="初始化hexo"><a href="#初始化hexo" class="headerlink" title="初始化hexo"></a>初始化hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;hexo init</div></pre></td></tr></table></figure>
-<p>初始化成功后可以到blog文件夹看到如下目录<br><img src="/assets/article_img/2017/07/init_list.png" alt="init"></p>
+<p>初始化成功后可以到blog文件夹看到如下目录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── _config.yml   //这里是网站的配置信息</div><div class="line">├── package.json  //HEXO项目依赖</div><div class="line">├── scaffolds     //模板文件夹</div><div class="line">|   ├──post.md    //文章模板</div><div class="line">|   ├──draft.md   //</div><div class="line">|   └──page.md</div><div class="line">├── source       //资源文件夹，</div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">└── themes       // 主题文件夹。Hexo会根据主题来生成静态页面</div></pre></td></tr></table></figure></p>
 <h3 id="本地运行"><a href="#本地运行" class="headerlink" title="本地运行"></a>本地运行</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;hexo server #开启服务  等价于hexo s</div></pre></td></tr></table></figure>
 <p>然后在浏览器输入localhost:4000,会看到如下效果<br><img src="/assets/article_img/2017/07/hexo_index.png" alt="index"><br>如果无法访问，可能是端口号占用，更改服务端口号：<code>hexo s -p 5000</code></p>
 <h3 id="常用到的命令"><a href="#常用到的命令" class="headerlink" title="常用到的命令"></a>常用到的命令</h3><blockquote><p>hexo init  #执行站点的初始化<br>hexo g == hexo generate #生成静态页面。在生成时可以加上-d或–deploy参数在生成后立即部署。生成的静态文件在public文件夹下，没有则会自动建立。<br>hexo d == hexo deploy #将 .deploy 目录部署到 gitHub,也就是将public目录下生成的静态文件上传到某个特定的位置，部署时可以加上-g或–generate参数，在部署前先生成一遍静态文件。<br>hexo s == hexo server #开启预览访问端口（默认：4000，’ctr+c’关闭server）,在本地 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 启动一个hexo服务器，可以用来预览hexo站点的效果。<br>hexo n == hexo new  #新建一个markdown文件。<br>hexo new [layout] <title># [layout]是该文件的类型，取值有post、draft和page三种，分别对应新建文章、草稿、页面。在运行该命令时，会调用scaffolds下的对应模板。<br>hexo clean #清理Hexo缓存。该操作会强制Hexo清空已生成的全部静态文件以及Hexo自身的数据库，有时候相当有效（更换主题后建议运行）。<br>hexo publish <title>#发布某篇草稿（即将该markdown文件转移到_post文件夹下）</title></title></p>
@@ -222,6 +222,8 @@
 <p>解决后重新部署 <code>INFO  Deploy done: git</code>,部署成功</p>
 <h3 id="本地运行-1"><a href="#本地运行-1" class="headerlink" title="本地运行"></a>本地运行</h3><p>开启服务<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">E:\www\blog&gt;hexo server</div></pre></td></tr></table></figure></p>
 <p>在浏览器分别出入 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 和<a href="http://william-wqq.github.io">http://william-wqq.github.io</a> 都能看到如下界面<br><img src="/assets/article_img/2017/07/deploy_success_index.png" alt="index"><br>一个简单的博客就搭建成功了，它应该还包括评论、相册等基本的功能，我们有时间在去讨论这些。</p>
+<blockquote><p><strong>本文作者</strong>: William<br><strong>本文链接</strong>: <a href="http://www.williamwqq.site/2017/07/27/quick-build-blog/" target="_blank" rel="external">http://www.williamwqq.site/2017/07/27/quick-build-blog/</a><br><strong>版权声明</strong>: 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" rel="external">CC BY-NC-SA 3.0</a> 许可协议<a href="http://creativecommons.org/licenses/by-nc-sa/3.0" target="_blank" rel="external"><img src="https://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" alt="Creative Commons License"></a> 。转载请注明出处！</p>
+</blockquote>
 
       
 
