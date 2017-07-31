@@ -116,8 +116,8 @@
                 var data = res.list[j].arr;
                 var liTmpl = "";
                 for (var i = 0, len = data.link.length; i < len; i++) {
-                    var minSrc = 'http://www.williamwqq.site/assets/ins-min/' + data.link[i] + '.min.jpg';
-                    var src = 'http://www.williamwqq.site/assets/ins/' + data.link[i];
+                    var minSrc = 'http://otxphxeyb.bkt.clouddn.com/ins-min/' + data.link[i] + '.min.jpg';
+                    var src = 'http://otxphxeyb.bkt.clouddn.com/ins/' + data.link[i];
                     var type = data.type[i];
                     var target = src + (type === 'video' ? '.mp4' : '.jpg');
                     src += '.jpg';
