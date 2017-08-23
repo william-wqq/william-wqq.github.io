@@ -6,18 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://william-wqq.github.io">
-  <title>Tag: git | William的博客</title>
+  <title>Git基础和原理 | William的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Laravel、Linux、Mysql、PHP、Redis、技术爱好者，喜欢追求新鲜的事物，想通过微博来记录学习技术的点滴过程，同时也可以分享自己的故事">
-<meta property="og:type" content="website">
-<meta property="og:title" content="William的博客">
-<meta property="og:url" content="https://william-wqq.github.io/tags/git/index.html">
+  <meta name="description" content="一、前言　　理解Git的思想和基本工作原理，用起来就会知其所以然，游刃有余。尽管操作命令和其他版本控制系统(如Subversion、Perforce)区别不大，但是在保存和对待信息时还是有很大差异。 二、直接记录快照，而非差异比较　　Git 和其它版本控制系统(包括 Subversion 和近似工具)的主要差别在于 Git 对待数据的方法。 概念上来区分，其它大部分系统以文件变更列表的方式存储信息">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git基础和原理">
+<meta property="og:url" content="https://william-wqq.github.io/2017/08/22/git-basics/index.html">
 <meta property="og:site_name" content="William的博客">
-<meta property="og:description" content="Laravel、Linux、Mysql、PHP、Redis、技术爱好者，喜欢追求新鲜的事物，想通过微博来记录学习技术的点滴过程，同时也可以分享自己的故事">
+<meta property="og:description" content="一、前言　　理解Git的思想和基本工作原理，用起来就会知其所以然，游刃有余。尽管操作命令和其他版本控制系统(如Subversion、Perforce)区别不大，但是在保存和对待信息时还是有很大差异。 二、直接记录快照，而非差异比较　　Git 和其它版本控制系统(包括 Subversion 和近似工具)的主要差别在于 Git 对待数据的方法。 概念上来区分，其它大部分系统以文件变更列表的方式存储信息">
 <meta property="og:locale" content="zh">
+<meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/08/other_basic.png">
+<meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/08/git_basic.png">
+<meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/08/work_stage_repo.png">
+<meta property="og:updated_time" content="2017-08-23T07:14:54.047Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="William的博客">
-<meta name="twitter:description" content="Laravel、Linux、Mysql、PHP、Redis、技术爱好者，喜欢追求新鲜的事物，想通过微博来记录学习技术的点滴过程，同时也可以分享自己的故事">
+<meta name="twitter:title" content="Git基础和原理">
+<meta name="twitter:description" content="一、前言　　理解Git的思想和基本工作原理，用起来就会知其所以然，游刃有余。尽管操作命令和其他版本控制系统(如Subversion、Perforce)区别不大，但是在保存和对待信息时还是有很大差异。 二、直接记录快照，而非差异比较　　Git 和其它版本控制系统(包括 Subversion 和近似工具)的主要差别在于 Git 对待数据的方法。 概念上来区分，其它大部分系统以文件变更列表的方式存储信息">
+<meta name="twitter:image" content="https://william-wqq.github.io/assets/article_img/2017/08/other_basic.png">
   
     <link rel="alternative" href="/atom.xml" title="William的博客" type="application/atom+xml">
   
@@ -171,89 +177,76 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-git-basics" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/22/git-install/" class="archive-article-date">
-  	<time datetime="2017-08-22T05:42:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-22</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/22/git-install/">Git安装</a>
+    <h1 class="article-title" itemprop="name">
+      Git基础和原理
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">gitHub</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/git/" class="article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/22/git-basics/" class="archive-article-date">
+        <!-- 显示阅读数 -->
+        
+        <br/>
+        <a href="javascript:void(0);" style="color:gray;font-size:14px;">
+        <span class="icon-sort"></span>
+        <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+                  阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+        </span>
+        </a>
+        
+        
+        <a href="/2017/08/22/git-basics/" class="archive-article-date">
   	<time datetime="2017-08-22T03:03:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-22</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/22/git-basics/">Git基础和原理</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h3><p>　　理解Git的思想和基本工作原理，用起来就会知其所以然，游刃有余。尽管操作命令和其他版本控制系统(如Subversion、Perforce)区别<br>不大，但是在保存和对待信息时还是有很大差异。</p>
+<h3 id="二、直接记录快照，而非差异比较"><a href="#二、直接记录快照，而非差异比较" class="headerlink" title="二、直接记录快照，而非差异比较"></a>二、直接记录快照，而非差异比较</h3><p>　　Git 和其它版本控制系统(包括 Subversion 和近似工具)的主要差别在于 Git 对待数据的方法。 概念上来区分，其它大部分系统以文件<br>变更列表的方式存储信息。 这类系统(<code>CVS、Subversion、Perforce、Bazaar</code> 等等)将它们保存的信息看作是一组基本文件和每个文件随时<br>间逐步累积的差异。<code>存储每个文件与初始版本的差异</code>，如下图所示:</p>
+<a id="more"></a>
+<p><img src="/assets/article_img/2017/08/other_basic.png" alt="其他版本控制系统工作原理示意图"></p>
+<p>　　Git 不按照以上方式对待或保存数据。 反之，Git 更像是把数据看作是对小型文件系统的一组快照。 每次你提交更新，或在 Git 中保存<br>项目状态时，它主要对当时的全部文件制作一个快照并保存这个快照的索引。 为了高效，如果文件没有修改，Git 不再重新存储该文件，而<br>是只保留一个链接指向之前存储的文件。 <code>Git 对待数据更像是一个 快照流</code>。如下图所示:</p>
+<p><img src="/assets/article_img/2017/08/git_basic.png" alt="git工作原理示意图"></p>
+<p>　　这是 Git 与几乎所有其它版本控制系统的重要区别。 因此 Git 重新考虑了以前每一代版本控制系统延续下来的诸多方面。 Git 更像是一<br>个小型的文件系统，提供了许多以此为基础构建的超强工具，而不只是一个简单的 VCS。 稍后我们在 Git 分支讨论 Git 分支管理时，将探究<br>这种方式对待数据所能获得的益处。</p>
+<h3 id="三、近乎所有操作都是本地执行"><a href="#三、近乎所有操作都是本地执行" class="headerlink" title="三、近乎所有操作都是本地执行"></a>三、近乎所有操作都是本地执行</h3><p>　　在 Git 中的绝大多数操作都只需要访问本地文件和资源，一般不需要来自网络上其它计算机的信息。 如果你习惯于所有操作都有网络延<br>时开销的集中式版本控制系统，Git 在这方面会让你感到速度之神赐给了 Git 超凡的能量。 因为你在本地磁盘上就有项目的完整历史，所以<br>大部分操作看起来瞬间完成。</p>
+<p>　　举个例子，要浏览项目的历史，Git 不需外连到服务器去获取历史，然后再显示出来——它只需直接从本地数据库中读取。 你能立即看<br>到项目历史。 如果想查看当前版本与一个月前的版本之间引入的修改，Git 会查找到一个月前的文件做一次本地的差异计算，而不是由远程<br>服务器处理或从远程服务器拉回旧版本文件再来本地处理。</p>
+<p>　　这也意味着你离线或者没有 VPN 时，几乎可以进行任何操作。 如你在飞机或火车上想做些工作，你能愉快地提交，直到有网络连接时<br>再上传。 如你回家后 VPN 客户端不正常，你仍能工作。 使用其它系统，做到如此是不可能或很费力的。 比如，用 Perforce，你没有连接<br>服务器时几乎不能做什么事；用 Subversion 和 CVS，你能修改文件，但不能向数据库提交修改(因为你的本地数据库离线了)。 这看起来不<br>是大问题，但是你可能会惊喜地发现它带来的巨大的不同。</p>
+<h3 id="四、Git-保证完整性"><a href="#四、Git-保证完整性" class="headerlink" title="四、Git 保证完整性"></a>四、Git 保证完整性</h3><p>　　Git 中所有数据在存储前都计算校验和，然后以校验和来引用。 这意味着不可能在 Git 不知情时更改任何文件内容或目录内容。 这个<br>功能建构在 Git 底层，是构成 Git 哲学不可或缺的部分。 若你在传送过程中丢失信息或损坏文件，Git 就能发现。</p>
+<p>　　Git 用以计算校验和的机制叫做 SHA-1 散列(hash，哈希)。 这是一个由 40 个十六进制字符(0-9 和 a-f)组成字符串，基于 Git 中文<br>件的内容或目录结构计算出来。 SHA-1 哈希看起来是这样：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">24b9da6552252987aa493b52f8696cd6d3b0037</div></pre></td></tr></table></figure></p>
+<p>　　Git 中使用这种哈希值的情况很多，你将经常看到这种哈希值。 实际上，Git 数据库中保存的信息都是以文件内容的哈希值来索引，而<br>不是文件名。</p>
+<h3 id="五、三种状态"><a href="#五、三种状态" class="headerlink" title="五、三种状态"></a>五、三种状态</h3><p>1、Git 有三种状态，你的文件可能处于其中之一：</p>
+<ul>
+<li><code>已修改(modified)　表示修改了文件，但还没保存到数据库中</code></li>
+<li><code>已暂存(staged)　　表示对一个已修改文件的当前版本做了标记</code></li>
+<li><code>已提交(committed)表示数据已经安全的保存在本地数据库中</code></li>
+</ul>
+<p>2、Git 项目的三个工作区域的概念。工作目录、暂存区域以及 Git 仓库如下图所示：<br>　<img src="/assets/article_img/2017/08/work_stage_repo.png" alt="工作区域的概念示意图"></p>
+<ul>
+<li><code>工作目录</code>　对项目的某个版本独立提取出来的内容，这些从 Git 仓库的压缩数据库中提取出来的文件，放在磁盘上供你使用或修改</li>
+<li><code>暂存区域</code>　是一个文件，保存了下次将提交的文件列表信息，也被称作‘索引’，不过一般说法还是叫暂存区域</li>
+<li><code>Git仓库</code>　是 Git 用来保存项目的元数据和对象数据库的地方，从其它计算机克隆仓库时，</li>
+</ul>
+<p>3、基本的 Git 工作流程如下：</p>
+<ul>
+<li>在工作目录中修改文件。</li>
+<li>暂存文件，将文件的快照放入暂存区域。</li>
+<li>提交更新，找到暂存区域的文件，将快照永久性存储到 Git 仓库目录。</li>
+</ul>
+<p>　　如果 Git 目录中保存着的特定版本文件，就属于<code>已提交状态</code>。 如果作了修改并已放入暂存区域，就属于<code>已暂存状态</code>。 如果自上<br>次取出后，作了修改但还没有放到暂存区域，就是<code>已修改状态</code></p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -265,7 +258,7 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -278,176 +271,149 @@ var _hmt = _hmt || [];
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://william-wqq.github.io/2017/08/22/git-basics/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/22/history-of-git/" class="archive-article-date">
-  	<time datetime="2017-08-22T02:34:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-22</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2017/08/22/git-install/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Git安装
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/08/22/history-of-git/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Git历史</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/22/history-of-git/">Git历史</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/git/" class="article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、前言"><span class="toc-number">1.</span> <span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、直接记录快照，而非差异比较"><span class="toc-number">2.</span> <span class="toc-text">二、直接记录快照，而非差异比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、近乎所有操作都是本地执行"><span class="toc-number">3.</span> <span class="toc-text">三、近乎所有操作都是本地执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、Git-保证完整性"><span class="toc-number">4.</span> <span class="toc-text">四、Git 保证完整性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、三种状态"><span class="toc-number">5.</span> <span class="toc-text">五、三种状态</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
+<!--友言-->
   
+
+  <!--来必力-->
     
+    <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTc5Ni82MzYy">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/16/version-controller-system/" class="archive-article-date">
-  	<time datetime="2017-08-16T08:07:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-16</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/16/version-controller-system/">Git基本概念</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vcs</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/git/" class="article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/07/27/quick-build-blog/" class="archive-article-date">
-  	<time datetime="2017-07-27T06:50:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/07/27/quick-build-blog/">hexo+GitHub Pages搭建个人博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">node.js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/git/" class="article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -479,9 +445,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
