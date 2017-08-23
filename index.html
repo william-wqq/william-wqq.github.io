@@ -186,7 +186,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/23/nginx-install/">nginx-install</a>
+      <a class="article-title" href="/2017/08/23/nginx-install/">Nginx安装</a>
     </h1>
   
 
@@ -201,6 +201,15 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
+        <h3 id="一、源码安装"><a href="#一、源码安装" class="headerlink" title="一、源码安装"></a>一、源码安装</h3><p>这种方式下载的文件是源码，安装复杂，手动去安装依赖、配置、编译.源码下载地址 <a href="http://nginx.org/download/" target="_blank" rel="external">http://nginx.org/download/</a> ,这里我们选择安装<br><code>nginx-1.9.9</code></p>
+<h4 id="1、安装依赖"><a href="#1、安装依赖" class="headerlink" title="1、安装依赖"></a>1、安装依赖</h4><p>nginx依赖于<code>pcre</code>、<code>zlib</code>、<code>openssl</code></p>
+<ul>
+<li>prce  <a href="https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz" target="_blank" rel="external">https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz</a></li>
+<li>zlib  <a href="http://www.zlib.net/zlib-1.2.11.tar.gz" target="_blank" rel="external">http://www.zlib.net/zlib-1.2.11.tar.gz</a></li>
+<li>openssl  <a href="https://www.openssl.org/source/openssl-1.0.2l.tar.gz" target="_blank" rel="external">https://www.openssl.org/source/openssl-1.0.2l.tar.gz</a></li>
+</ul>
+        
+          <a class="article-more-a" href="/2017/08/23/nginx-install/#more">more >></a>
         
       
 
@@ -243,92 +252,6 @@ var _hmt = _hmt || [];
 
 
   
-    <article id="post-git-config" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/23/git-config/">Git配置</a>
-    </h1>
-  
-
-        <!-- 显示阅读数 -->
-        
-        
-        <a href="/2017/08/23/git-config/" class="archive-article-date">
-  	<time datetime="2017-08-23T07:20:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/git/" class="article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/23/git-config/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-nginx-uninstall" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -336,7 +259,7 @@ var _hmt = _hmt || [];
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/23/nginx-uninstall/">Nginx完全卸载</a>
+      <a class="article-title" href="/2017/08/23/nginx-uninstall/">Nginx卸载</a>
     </h1>
   
 
@@ -351,8 +274,8 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1、先执行命令<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get purge nginx #删除nginx以及配置文件</div></pre></td></tr></table></figure></p>
-<p>2、查看nginx进程<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">root@william:~# ps -ef | grep &apos;nginx&apos;</div><div class="line">root     26266     1  0 15:05 ?        00:00:00 nginx: master process nginx -c /usr/local/nginx/conf/nginx.conf</div><div class="line">nobody   26267 26266  0 15:05 ?        00:00:00 nginx: worker process</div><div class="line">root     26269 26240  0 15:05 pts/1    00:00:00 grep nginx</div></pre></td></tr></table></figure></p>
+        <h3 id="1、先执行命令"><a href="#1、先执行命令" class="headerlink" title="1、先执行命令"></a>1、先执行命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get purge nginx #删除nginx以及配置文件</div></pre></td></tr></table></figure>
+<h3 id="2、查看nginx进程"><a href="#2、查看nginx进程" class="headerlink" title="2、查看nginx进程"></a>2、查看nginx进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">root@william:~# ps -ef | grep &apos;nginx&apos;</div><div class="line">root     26266     1  0 15:05 ?        00:00:00 nginx: master process nginx -c /usr/local/nginx/conf/nginx.conf</div><div class="line">nobody   26267 26266  0 15:05 ?        00:00:00 nginx: worker process</div><div class="line">root     26269 26240  0 15:05 pts/1    00:00:00 grep nginx</div></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2017/08/23/nginx-uninstall/#more">more >></a>
         
@@ -608,6 +531,97 @@ var _hmt = _hmt || [];
 
 
   
+    <article id="post-history-of-git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/22/history-of-git/">Git历史</a>
+    </h1>
+  
+
+        <!-- 显示阅读数 -->
+        
+        
+        <a href="/2017/08/22/history-of-git/" class="archive-article-date">
+  	<time datetime="2017-08-22T02:34:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>　　同生活中的许多伟大事物一样，<code>Git</code> 诞生于一个极富纷争大举创新的年代。</p>
+<p>　　Linux 内核开源项目有着为数众广的参与者。 绝大多数的 <code>Linux</code> 内核维护工作都花在了提交补丁和保存归档的繁琐事务上(1991－<br>2002年间)。到 2002 年，整个项目组开始启用一个专有的分布式版本控制系统 <code>BitKeeper</code> 来管理和维护代码。</p>
+<p>　　到了 2005 年，开发 BitKeeper 的商业公司同 Linux 内核开源社区的合作关系结束，他们收回了 Linux 内核社区免费使用 BitKeeper<br>的权力这就迫使 Linux 开源社区(特别是 <code>Linux 的缔造者 Linus Torvalds</code>)基于使用 BitKeeper 时的经验教训，开发出自己的版本系统。<br>他们对新的系统制订了若干目标：</p>
+        
+          <a class="article-more-a" href="/2017/08/22/history-of-git/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/git/" class="article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/22/history-of-git/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -722,6 +736,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vcs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
@@ -730,7 +748,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vcs</a>
+                <a href="javascript:void(0)" class="js-tag color4">tag</a>
               </li>
             
             <div class="clearfix"></div>
