@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://william-wqq.github.io">
   <title>Nginx卸载 | William的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、先执行命令1apt-get purge nginx #删除nginx以及配置文件 2、查看nginx进程1234root@william:~# ps -ef | grep &amp;apos;nginx&amp;apos;root     26266     1  0 15:05 ?        00:00:00 nginx: master process nginx -c /usr/local/nginx">
+  <meta name="description" content="1、先执行命令12apt-get purge nginx #删除nginx以及配置文件apt-get autoremove 2、查看nginx进程1234root@william:~# ps -ef | grep &amp;apos;nginx&amp;apos;root     26266     1  0 15:05 ?        00:00:00 nginx: master process nginx">
 <meta name="keywords" content="nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nginx卸载">
 <meta property="og:url" content="https://william-wqq.github.io/2017/08/23/nginx-uninstall/index.html">
 <meta property="og:site_name" content="William的博客">
-<meta property="og:description" content="1、先执行命令1apt-get purge nginx #删除nginx以及配置文件 2、查看nginx进程1234root@william:~# ps -ef | grep &amp;apos;nginx&amp;apos;root     26266     1  0 15:05 ?        00:00:00 nginx: master process nginx -c /usr/local/nginx">
+<meta property="og:description" content="1、先执行命令12apt-get purge nginx #删除nginx以及配置文件apt-get autoremove 2、查看nginx进程1234root@william:~# ps -ef | grep &amp;apos;nginx&amp;apos;root     26266     1  0 15:05 ?        00:00:00 nginx: master process nginx">
 <meta property="og:locale" content="zh">
 <meta property="og:image" content="https://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png">
-<meta property="og:updated_time" content="2017-08-23T15:59:07.226Z">
+<meta property="og:updated_time" content="2017-08-24T08:41:45.874Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx卸载">
-<meta name="twitter:description" content="1、先执行命令1apt-get purge nginx #删除nginx以及配置文件 2、查看nginx进程1234root@william:~# ps -ef | grep &amp;apos;nginx&amp;apos;root     26266     1  0 15:05 ?        00:00:00 nginx: master process nginx -c /usr/local/nginx">
+<meta name="twitter:description" content="1、先执行命令12apt-get purge nginx #删除nginx以及配置文件apt-get autoremove 2、查看nginx进程1234root@william:~# ps -ef | grep &amp;apos;nginx&amp;apos;root     26266     1  0 15:05 ?        00:00:00 nginx: master process nginx">
 <meta name="twitter:image" content="https://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png">
   
     <link rel="alternative" href="/atom.xml" title="William的博客" type="application/atom+xml">
@@ -211,7 +211,7 @@ var _hmt = _hmt || [];
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1、先执行命令"><a href="#1、先执行命令" class="headerlink" title="1、先执行命令"></a>1、先执行命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">apt-get purge nginx #删除nginx以及配置文件</div></pre></td></tr></table></figure>
+        <h3 id="1、先执行命令"><a href="#1、先执行命令" class="headerlink" title="1、先执行命令"></a>1、先执行命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">apt-get purge nginx #删除nginx以及配置文件</div><div class="line">apt-get autoremove</div></pre></td></tr></table></figure>
 <h3 id="2、查看nginx进程"><a href="#2、查看nginx进程" class="headerlink" title="2、查看nginx进程"></a>2、查看nginx进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">root@william:~# ps -ef | grep &apos;nginx&apos;</div><div class="line">root     26266     1  0 15:05 ?        00:00:00 nginx: master process nginx -c /usr/local/nginx/conf/nginx.conf</div><div class="line">nobody   26267 26266  0 15:05 ?        00:00:00 nginx: worker process</div><div class="line">root     26269 26240  0 15:05 pts/1    00:00:00 grep nginx</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <h3 id="3、kill进程"><a href="#3、kill进程" class="headerlink" title="3、kill进程"></a>3、kill进程</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">root@william:~# kill -9  26266 26267</div></pre></td></tr></table></figure>
@@ -514,6 +514,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">gitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
             
             <div class="clearfix"></div>
