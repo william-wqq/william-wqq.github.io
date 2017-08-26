@@ -8,22 +8,22 @@
   <link rel="dns-prefetch" href="https://william-wqq.github.io">
   <title>Nginx安装 | William的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、编译安装这种方式下载的文件是源码，安装复杂，手动去安装依赖、配置、编译.源码下载地址 http://nginx.org/download/ ,这里我们选择安装nginx-1.9.9 1、安装依赖库nginx依赖于pcre、zlib、openssl  prce  https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz zlib  http://www.zli">
+  <meta name="description" content="一、编译安装这种方式下载的文件是源码，安装复杂，手动去安装依赖、配置、编译.源码下载地址 http://nginx.org/download/ ,这里我们选择安装nginx-1.9.9 1、安装依赖库nginx依赖于pcre、zlib、opensslgzip模块需要zlib库rewrite模块需要pcre库ssl功能需要openssl库  prce  https://ftp.pcre.org/pu">
 <meta name="keywords" content="nginx">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Nginx安装">
 <meta property="og:url" content="https://william-wqq.github.io/2017/08/23/nginx-install/index.html">
 <meta property="og:site_name" content="William的博客">
-<meta property="og:description" content="一、编译安装这种方式下载的文件是源码，安装复杂，手动去安装依赖、配置、编译.源码下载地址 http://nginx.org/download/ ,这里我们选择安装nginx-1.9.9 1、安装依赖库nginx依赖于pcre、zlib、openssl  prce  https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz zlib  http://www.zli">
+<meta property="og:description" content="一、编译安装这种方式下载的文件是源码，安装复杂，手动去安装依赖、配置、编译.源码下载地址 http://nginx.org/download/ ,这里我们选择安装nginx-1.9.9 1、安装依赖库nginx依赖于pcre、zlib、opensslgzip模块需要zlib库rewrite模块需要pcre库ssl功能需要openssl库  prce  https://ftp.pcre.org/pu">
 <meta property="og:locale" content="zh">
 <meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/08/process_nginx.png">
 <meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/08/aliyun_nginx.png">
 <meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/08/nginx_install_succ.png">
 <meta property="og:image" content="https://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png">
-<meta property="og:updated_time" content="2017-08-24T16:23:09.139Z">
+<meta property="og:updated_time" content="2017-08-25T02:49:33.323Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx安装">
-<meta name="twitter:description" content="一、编译安装这种方式下载的文件是源码，安装复杂，手动去安装依赖、配置、编译.源码下载地址 http://nginx.org/download/ ,这里我们选择安装nginx-1.9.9 1、安装依赖库nginx依赖于pcre、zlib、openssl  prce  https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz zlib  http://www.zli">
+<meta name="twitter:description" content="一、编译安装这种方式下载的文件是源码，安装复杂，手动去安装依赖、配置、编译.源码下载地址 http://nginx.org/download/ ,这里我们选择安装nginx-1.9.9 1、安装依赖库nginx依赖于pcre、zlib、opensslgzip模块需要zlib库rewrite模块需要pcre库ssl功能需要openssl库  prce  https://ftp.pcre.org/pu">
 <meta name="twitter:image" content="https://william-wqq.github.io/assets/article_img/2017/08/process_nginx.png">
   
     <link rel="alternative" href="/atom.xml" title="William的博客" type="application/atom+xml">
@@ -215,7 +215,7 @@ var _hmt = _hmt || [];
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="一、编译安装"><a href="#一、编译安装" class="headerlink" title="一、编译安装"></a>一、编译安装</h3><p>这种方式下载的文件是源码，安装复杂，手动去安装依赖、配置、编译.源码下载地址 <a href="http://nginx.org/download/" target="_blank" rel="external">http://nginx.org/download/</a> ,这里我们选择安装<br><code>nginx-1.9.9</code></p>
-<h4 id="1、安装依赖库"><a href="#1、安装依赖库" class="headerlink" title="1、安装依赖库"></a>1、安装依赖库</h4><p>nginx依赖于<code>pcre</code>、<code>zlib</code>、<code>openssl</code></p>
+<h4 id="1、安装依赖库"><a href="#1、安装依赖库" class="headerlink" title="1、安装依赖库"></a>1、安装依赖库</h4><p>nginx依赖于<code>pcre</code>、<code>zlib</code>、<code>openssl</code><br>gzip模块需要zlib库<br>rewrite模块需要pcre库<br>ssl功能需要openssl库</p>
 <ul>
 <li>prce  <a href="https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz" target="_blank" rel="external">https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz</a></li>
 <li>zlib  <a href="http://www.zlib.net/zlib-1.2.11.tar.gz" target="_blank" rel="external">http://www.zlib.net/zlib-1.2.11.tar.gz</a></li>
@@ -520,7 +520,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">gitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">php</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -533,14 +545,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vcs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">gitHub</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">php</a>
               </li>
             
             <div class="clearfix"></div>

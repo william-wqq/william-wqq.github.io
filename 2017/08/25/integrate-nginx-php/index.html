@@ -6,18 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://william-wqq.github.io">
-  <title>Tag: php | William的博客</title>
+  <title>整合Nginx和PHP | William的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Laravel、Linux、Mysql、PHP、Redis、技术爱好者，喜欢追求新鲜的事物，想通过微博来记录学习技术的点滴过程，同时也可以分享自己的故事">
-<meta property="og:type" content="website">
-<meta property="og:title" content="William的博客">
-<meta property="og:url" content="https://william-wqq.github.io/tags/php/index.html">
+  <meta name="description" content="一、阿里云Linux整合Nginx和PHP1、nginx和php nginx本身不能处理PHP，它只是个web服务器，当接收到请求后，如果是php请求，则发给php解释器处理，并把结果返回给客户端。nginx一般是把请求发fastcgi管理进程处理，fascgi管理进程选择cgi子进程处理结果并返回,本文以php-fpm为例介绍如何使nginx支持PHPPHP-FPM是一个PHP FastCGI管">
+<meta name="keywords" content="nginx,php">
+<meta property="og:type" content="article">
+<meta property="og:title" content="整合Nginx和PHP">
+<meta property="og:url" content="https://william-wqq.github.io/2017/08/25/integrate-nginx-php/index.html">
 <meta property="og:site_name" content="William的博客">
-<meta property="og:description" content="Laravel、Linux、Mysql、PHP、Redis、技术爱好者，喜欢追求新鲜的事物，想通过微博来记录学习技术的点滴过程，同时也可以分享自己的故事">
+<meta property="og:description" content="一、阿里云Linux整合Nginx和PHP1、nginx和php nginx本身不能处理PHP，它只是个web服务器，当接收到请求后，如果是php请求，则发给php解释器处理，并把结果返回给客户端。nginx一般是把请求发fastcgi管理进程处理，fascgi管理进程选择cgi子进程处理结果并返回,本文以php-fpm为例介绍如何使nginx支持PHPPHP-FPM是一个PHP FastCGI管">
 <meta property="og:locale" content="zh">
+<meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/08/php_fpm_support.png">
+<meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/08/php_fpm.png">
+<meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/08/nginx_conf_old.png">
+<meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/08/nginx_conf_new.png">
+<meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/08/nginx_php_succ.png">
+<meta property="og:image" content="https://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png">
+<meta property="og:updated_time" content="2017-08-26T03:00:51.631Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="William的博客">
-<meta name="twitter:description" content="Laravel、Linux、Mysql、PHP、Redis、技术爱好者，喜欢追求新鲜的事物，想通过微博来记录学习技术的点滴过程，同时也可以分享自己的故事">
+<meta name="twitter:title" content="整合Nginx和PHP">
+<meta name="twitter:description" content="一、阿里云Linux整合Nginx和PHP1、nginx和php nginx本身不能处理PHP，它只是个web服务器，当接收到请求后，如果是php请求，则发给php解释器处理，并把结果返回给客户端。nginx一般是把请求发fastcgi管理进程处理，fascgi管理进程选择cgi子进程处理结果并返回,本文以php-fpm为例介绍如何使nginx支持PHPPHP-FPM是一个PHP FastCGI管">
+<meta name="twitter:image" content="https://william-wqq.github.io/assets/article_img/2017/08/php_fpm_support.png">
   
     <link rel="alternative" href="/atom.xml" title="William的博客" type="application/atom+xml">
   
@@ -177,36 +186,119 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-integrate-nginx-php" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/25/integrate-nginx-php/" class="archive-article-date">
-  	<time datetime="2017-08-25T02:43:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-25</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/25/integrate-nginx-php/">整合Nginx和PHP</a>
+    <h1 class="article-title" itemprop="name">
+      整合Nginx和PHP
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        <!-- 显示阅读数 -->
+        
+        <br/>
+        <a href="javascript:void(0);" style="color:gray;font-size:14px;">
+        <span class="icon-sort"></span>
+        <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+                  阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+        </span>
+        </a>
+        
+        
+        <a href="/2017/08/25/integrate-nginx-php/" class="archive-article-date">
+  	<time datetime="2017-08-25T02:43:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、阿里云Linux整合Nginx和PHP"><a href="#一、阿里云Linux整合Nginx和PHP" class="headerlink" title="一、阿里云Linux整合Nginx和PHP"></a>一、阿里云Linux整合Nginx和PHP</h3><h4 id="1、nginx和php"><a href="#1、nginx和php" class="headerlink" title="1、nginx和php"></a>1、nginx和php</h4><blockquote>
+<p>nginx本身不能处理PHP，它只是个web服务器，当接收到请求后，如果是php请求，则发给<code>php解释器</code>处理，并把结果返回给客户端。<br>nginx一般是把请求发<code>fastcgi管理进程</code>处理，fascgi管理进程选择<code>cgi子进程</code>处理结果并返回,本文以<code>php-fpm</code>为例介绍如何使nginx支持PHP<br>PHP-FPM是一个PHP FastCGI管理器，是只用于PHP的,可以在 <a href="http://php-fpm.org/download" target="_blank" rel="external">http://php-fpm.org/download</a> 下载得到.<br>PHP-FPM其实是PHP源代码的一个补丁，旨在将FastCGI进程管理整合进PHP包中。必须将它patch到你的PHP源代码中，在编译安装PHP后才可以使用。<br>新版PHP已经集成php-fpm了，不再是第三方的包了，推荐使用。PHP-FPM提供了更好的PHP进程管理方式，可以有效控制内存和进<br>程、可以平滑重载PHP配置，比<code>spawn-fcgi</code>具有更多优点，所以被PHP官方收录了。在./configure的时候带 <code>–enable-fpm</code>参数即<br>可开启PHP-FPM，其它参数都是配置php的，具体选项含义可以查看这里。</p>
+</blockquote>
+<a id="more"></a>
+<h4 id="2、拷贝配置文件"><a href="#2、拷贝配置文件" class="headerlink" title="2、拷贝配置文件"></a>2、拷贝配置文件</h4><pre><code>cd /usr/local/php/etc 
+cp php-fpm.conf.default php-fpm.conf
+
+cd php源码目录
+cp php.ini-development /usr/local/php/etc/php.ini   
+</code></pre><h4 id="3、开启php解析"><a href="#3、开启php解析" class="headerlink" title="3、开启php解析"></a>3、开启php解析</h4><p>修改nginx配置文件以支持php-fpm <code>vi /usr/local/nginx/conf/ngnix.conf</code> ,在server段里注释打开以下代码<br><img src="/assets/article_img/2017/08/php_fpm_support.png" alt="php"></p>
+<h4 id="4、开启php-fpm"><a href="#4、开启php-fpm" class="headerlink" title="4、开启php-fpm"></a>4、开启php-fpm</h4><pre><code>/usr/local/php/sbin/php-fpm -c /usr/local/php/etc/php-fpm.conf
+
+[25-Aug-2017 01:12:36] WARNING: Nothing matches the include pattern &apos;/usr/local/php/etc/php-fpm.d/*.conf&apos; from /usr/local/php/etc/php-fpm.conf at line 125.
+[25-Aug-2017 01:12:36] ERROR: No pool defined. at least one pool section must be specified in config file
+[25-Aug-2017 01:12:36] ERROR: failed to post process the configuration
+[25-Aug-2017 01:12:36] ERROR: FPM initialization failed
+</code></pre><p>报错找不到配置文件，然后我们进入目录拷贝配置文件</p>
+<pre><code>cd usr/local/php/etc/php-fpm.d
+cp www.conf.default www.conf
+</code></pre><p>重新开启报错</p>
+<pre><code>[25-Aug-2017 01:36:36] ERROR: [pool www] cannot get gid for group &apos;nobody&apos;
+[25-Aug-2017 01:36:36] ERROR: FPM initialization failed
+</code></pre><p>添加用户组 groupadd nobody,再次开启成功 查看监听端口状态 <a href="http://www.williamwqq.site/2017/08/25/linux_netstat/" target="_blank" rel="external">netstat -atunlp</a><br><img src="/assets/article_img/2017/08/php_fpm.png" alt="php"></p>
+<h4 id="5、修改nginx配置"><a href="#5、修改nginx配置" class="headerlink" title="5、修改nginx配置"></a>5、修改nginx配置</h4><p>打开<code>/usr/local/nginx/conf/nginx.conf</code><br><img src="/assets/article_img/2017/08/nginx_conf_old.png" alt="php"></p>
+<p>$document_root这个参数是有root参数来设定的，所有我们要修改下把/scripts修改为$document_root既指向站点根目录<br><img src="/assets/article_img/2017/08/nginx_conf_new.png" alt="php"><br>重启nginx</p>
+<blockquote>
+<p>注意 ：如果您没有修改/scripts这个地方是访问不了的如果您没有修改/scripts这个地方是访问不了的</p>
+</blockquote>
+<h4 id="6、浏览器访问"><a href="#6、浏览器访问" class="headerlink" title="6、浏览器访问"></a>6、浏览器访问</h4><p><code>在/home/www/default</code>目录创建phpinfo.php文件</p>
+<pre><code>&lt;?php
+    phpinfo();
+?&gt;
+</code></pre><p>打开浏览器查看php是否能解析网页<br><img src="/assets/article_img/2017/08/nginx_php_succ.png" alt="php"></p>
+<p>如果看到这里，恭喜你！说明nginx和php已经整合成功了！</p>
+<blockquote>
+<p>注意修改 php.ini后要记得重启 php-fpm </p>
+</blockquote>
+<h4 id="7、php-fpm重启"><a href="#7、php-fpm重启" class="headerlink" title="7、php-fpm重启"></a>7、php-fpm重启</h4><p>执行 <code>kill -USR2 cat /usr/local/php/var/run/php-fpm.pid</code> 报错</p>
+<pre><code>cat: /usr/local/php/var/run/php-fpm.pid: No such file or directory
+</code></pre><p>php-fpm.pid文件需要到到php-fpm.conf配置文件里面打开，顺便把php-fpm.log也打开</p>
+<pre><code>[global]
+; Pid file
+; Note: the default prefix is /usr/local/php/var
+; Default Value: none
+pid = run/php-fpm.pid
+
+; Error log file
+; If it&apos;s set to &quot;syslog&quot;, log is sent to syslogd instead of being written
+; into a local file.
+; Note: the default prefix is /usr/local/php/var
+; Default Value: log/php-fpm.log
+error_log = log/php-fpm.log
+</code></pre><p>查看php-fpm进程</p>
+<pre><code>root@william:~# ps aux | grep &apos;php-fpm&apos;
+root     25332  0.0  0.7 162524  7756 ?        Ss   Aug25   0:01 php-fpm: master process (/usr/local/php/etc/php-fpm.conf)
+nobody   25333  0.0  1.3 162588 13372 ?        S    Aug25   0:00 php-fpm: pool www
+nobody   25334  0.0  1.1 162588 11596 ?        S    Aug25   0:00 php-fpm: pool www
+root     26770  0.0  0.0  14224   932 pts/2    S+   10:07   0:00 grep --color=auto php-fpm    
+</code></pre><p>简单的重启方式 <code>kill -USR2 25333</code> 便会生成php-fpm.pid文件，下次就可以使用以下命令重启,关闭php-fpm了：</p>
+<pre><code>kill -INT `cat /usr/local/php/var/run/php-fpm.pid`  #关闭  
+kill -USR2 `cat /usr/local/php/var/run/php-fpm.pid` #重启
+</code></pre><p><code>cat /usr/local/php/var/run/php-fpm.pid</code> 输出的就是进程ID</p>
+<p>php-fpm常用命令</p>
+<pre><code>kill -INT PID
+INT, TERM：立刻终止 
+QUIT：平滑终止
+USR1：重新打开日志文件
+USR2：平滑重载所有worker进程并重新载入配置和二进制模块
+
+查看php-fpm进程数：  
+ps aux | grep -c php-fpm
+</code></pre><p>7、添加一个软连接：<code>ln -s /usr/local/php/etc/php.ini  /etc/php.ini</code></p>
+<blockquote>
+<p><strong>本文作者</strong>: William<br><strong>本文链接</strong>: <a href="http://www.williamwqq.site/2017/08/24/integrate-nginx-php/" target="_blank" rel="external">http://www.williamwqq.site/2017/08/24/integrate-nginx-php/</a><br><strong>版权声明</strong>: 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" rel="external">CC BY-NC-SA 3.0</a> 许可协议<a href="http://creativecommons.org/licenses/by-nc-sa/3.0" target="_blank" rel="external"><img src="https://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" alt="Creative Commons License"></a> 。转载请注明出处！</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -222,7 +314,7 @@ var _hmt = _hmt || [];
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -239,66 +331,149 @@ var _hmt = _hmt || [];
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://william-wqq.github.io/2017/08/25/integrate-nginx-php/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/24/php-install/" class="archive-article-date">
-  	<time datetime="2017-08-24T02:05:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-24</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2017/08/25/linux-netstat/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          netstat命令
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/08/24/php-install/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">PHP安装</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/24/php-install/">PHP安装</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/php/" class="article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、阿里云Linux整合Nginx和PHP"><span class="toc-number">1.</span> <span class="toc-text">一、阿里云Linux整合Nginx和PHP</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、nginx和php"><span class="toc-number">1.1.</span> <span class="toc-text">1、nginx和php</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、拷贝配置文件"><span class="toc-number">1.2.</span> <span class="toc-text">2、拷贝配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、开启php解析"><span class="toc-number">1.3.</span> <span class="toc-text">3、开启php解析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、开启php-fpm"><span class="toc-number">1.4.</span> <span class="toc-text">4、开启php-fpm</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、修改nginx配置"><span class="toc-number">1.5.</span> <span class="toc-text">5、修改nginx配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6、浏览器访问"><span class="toc-number">1.6.</span> <span class="toc-text">6、浏览器访问</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7、php-fpm重启"><span class="toc-number">1.7.</span> <span class="toc-text">7、php-fpm重启</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
+        
+    </div>
+</aside>
+
+
+
+<!--友言-->
   
 
+  <!--来必力-->
     
+    <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTc5Ni82MzYy">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+    
+
+  
+  
+  
+
+  
+
+  
 
 
           </div>
@@ -330,9 +505,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

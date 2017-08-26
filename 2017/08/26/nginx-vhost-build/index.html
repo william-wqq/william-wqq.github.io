@@ -6,18 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://william-wqq.github.io">
-  <title>Tag: php | William的博客</title>
+  <title>Nginx虚拟主机配置 | William的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Laravel、Linux、Mysql、PHP、Redis、技术爱好者，喜欢追求新鲜的事物，想通过微博来记录学习技术的点滴过程，同时也可以分享自己的故事">
-<meta property="og:type" content="website">
-<meta property="og:title" content="William的博客">
-<meta property="og:url" content="https://william-wqq.github.io/tags/php/index.html">
+  <meta name="description" content="一、前言之前我们已经安装Nginx和PHP,以及完美的成功整合，今天我们讲解nginx的虚拟主机的如何配置 二、虚拟主机1、虚拟主机配置进入 /usr/local/nginx/conf 目录，创建vhost文件夹 mkdir vhost进入 vhost 目录，创建default.conf,复制以下代码到该文件下：">
+<meta name="keywords" content="nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx虚拟主机配置">
+<meta property="og:url" content="https://william-wqq.github.io/2017/08/26/nginx-vhost-build/index.html">
 <meta property="og:site_name" content="William的博客">
-<meta property="og:description" content="Laravel、Linux、Mysql、PHP、Redis、技术爱好者，喜欢追求新鲜的事物，想通过微博来记录学习技术的点滴过程，同时也可以分享自己的故事">
+<meta property="og:description" content="一、前言之前我们已经安装Nginx和PHP,以及完美的成功整合，今天我们讲解nginx的虚拟主机的如何配置 二、虚拟主机1、虚拟主机配置进入 /usr/local/nginx/conf 目录，创建vhost文件夹 mkdir vhost进入 vhost 目录，创建default.conf,复制以下代码到该文件下：">
 <meta property="og:locale" content="zh">
+<meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/08/nginx_vhost_port_listen.png">
+<meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/08/nginx_vhost_502.png">
+<meta property="og:updated_time" content="2017-08-26T03:44:33.744Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="William的博客">
-<meta name="twitter:description" content="Laravel、Linux、Mysql、PHP、Redis、技术爱好者，喜欢追求新鲜的事物，想通过微博来记录学习技术的点滴过程，同时也可以分享自己的故事">
+<meta name="twitter:title" content="Nginx虚拟主机配置">
+<meta name="twitter:description" content="一、前言之前我们已经安装Nginx和PHP,以及完美的成功整合，今天我们讲解nginx的虚拟主机的如何配置 二、虚拟主机1、虚拟主机配置进入 /usr/local/nginx/conf 目录，创建vhost文件夹 mkdir vhost进入 vhost 目录，创建default.conf,复制以下代码到该文件下：">
+<meta name="twitter:image" content="https://william-wqq.github.io/assets/article_img/2017/08/nginx_vhost_port_listen.png">
   
     <link rel="alternative" href="/atom.xml" title="William的博客" type="application/atom+xml">
   
@@ -177,36 +182,142 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-nginx-vhost-build" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/25/integrate-nginx-php/" class="archive-article-date">
-  	<time datetime="2017-08-25T02:43:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-25</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/25/integrate-nginx-php/">整合Nginx和PHP</a>
+    <h1 class="article-title" itemprop="name">
+      Nginx虚拟主机配置
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        <!-- 显示阅读数 -->
+        
+        <br/>
+        <a href="javascript:void(0);" style="color:gray;font-size:14px;">
+        <span class="icon-sort"></span>
+        <span id="busuanzi_container_page_pv" style="color:#ef7522;font-size:14px;">
+                  阅读数: <span id="busuanzi_value_page_pv"></span>次 &nbsp;&nbsp;
+        </span>
+        </a>
+        
+        
+        <a href="/2017/08/26/nginx-vhost-build/" class="archive-article-date">
+  	<time datetime="2017-08-26T06:51:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h3><p>之前我们已经安装Nginx和PHP,以及完美的成功整合，今天我们讲解nginx的虚拟主机的如何配置</p>
+<h3 id="二、虚拟主机"><a href="#二、虚拟主机" class="headerlink" title="二、虚拟主机"></a>二、虚拟主机</h3><h4 id="1、虚拟主机配置"><a href="#1、虚拟主机配置" class="headerlink" title="1、虚拟主机配置"></a>1、虚拟主机配置</h4><p>进入 <code>/usr/local/nginx/conf</code> 目录，创建vhost文件夹 <code>mkdir vhost</code><br>进入 vhost 目录，创建default.conf,复制以下代码到该文件下：</p>
+<a id="more"></a>
+<pre><code>server {
+    # Standard virtualhost
+    listen 9888;
+    #server_name localhost;
+    root &quot;/home/www/laravel5.4&quot;;
+
+    index index.php;
+
+    charset utf-8;
+    sendfile off;
+
+    client_max_body_size 100m;
+
+    access_log off;
+    error_log  /var/log/nginx/nginx-vhost.log error;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        # Pass to FastCGI
+        fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        fastcgi_pass unix:/tmp/php-cgi.sock;
+        fastcgi_index index.php;
+        include fastcgi_params;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_intercept_errors off;
+        fastcgi_buffer_size 64k;
+        fastcgi_buffers 4 64k;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+    # Send requests to /socket.io to Node.js server
+
+}
+</code></pre><p>监听9888端口，默认访问根目录 <code>/home/www/laravel5.4</code></p>
+<h4 id="2、修改nginx配置"><a href="#2、修改nginx配置" class="headerlink" title="2、修改nginx配置"></a>2、修改nginx配置</h4><p>添加 <code>include vhost/*.conf</code>,加载虚拟主机配置文件。重启nginx <code>nginx -s reload</code></p>
+<p>查看监听状态<br><a href="http://www.williamwqq.site/2017/08/25/linux_netstat/" title="netstat命令" target="_blank" rel="external">netstat -atunlp</a></p>
+<p><img src="/assets/article_img/2017/08/nginx_vhost_port_listen.png" alt="vhost" title="虚拟主机监听端口"><br>说明虚拟主机端口监听成功</p>
+<h4 id="3、安全组规则"><a href="#3、安全组规则" class="headerlink" title="3、安全组规则"></a>3、安全组规则</h4><p>登陆阿里云控制台，添加安全组规则设置允许9888端口访问</p>
+<h4 id="4、访问虚拟主机端口"><a href="#4、访问虚拟主机端口" class="headerlink" title="4、访问虚拟主机端口"></a>4、访问虚拟主机端口</h4><p>在 /home/www/laravel5.4 目录创建index.php</p>
+<pre><code>&lt;?php
+
+    echo &quot; Hello World &quot;;
+&gt;
+</code></pre><p>在浏览器 阿里云外网ip xx.xx.xx.xx:9888</p>
+<p><img src="/assets/article_img/2017/08/nginx_vhost_502.png" alt="vhost" title="502 Bad Gateway"></p>
+<pre><code>wget 127.0.0.1:9888
+curl 127.0.0.1:9888
+</code></pre><p>linux本地访问提示502错误</p>
+<p>window ping <code>tcping64 xx.xx.xx.xx:9888</code> <a href="http://www.imooc.com/article/15303" title="ping指定端口" target="_blank" rel="external">tcping安装教程</a></p>
+<pre><code>tcping64 xx.xx.xx.xx 9888
+
+Probing xx.xx.xx.xx:9888/tcp - Port is open - time=29.194ms
+Probing xx.xx.xx.xx:9888/tcp - Port is open - time=32.686ms
+Probing xx.xx.xx.xx:9888/tcp - Port is open - time=28.986ms
+Probing xx.xx.xx.xx:9888/tcp - Port is open - time=32.696ms
+
+Ping statistics for xx.xx.xx.xx:9888
+     4 probes sent.
+     4 successful, 0 failed.
+Approximate trip times in milli-seconds:
+     Minimum = 28.986ms, Maximum = 32.696ms, Average = 30.890ms
+</code></pre><p>端口是打开的，但就是不能访问</p>
+<h4 id="5、问题解决"><a href="#5、问题解决" class="headerlink" title="5、问题解决"></a>5、问题解决</h4><p>1、查看虚拟主机自定义的错误日志<br>error_log  /var/log/nginx/nginx-vhost.log error;</p>
+<pre><code>2017/08/25 10:00:14 [crit] 23752#0: *134 connect() to unix:/tmp/php-cgi.sock failed (2: No such file or directory)  upstream: &quot;fastcgi://unix:/tmp/php-cgi.sock:&quot;
+</code></pre><p>出现以上问题请检查nginx和php-fpm的配置<br>nginx虚拟主机配置监听 <code>fastcgi_pass unix:/tmp/php-cgi.sock</code> 为 <code>unix socket</code> 方式;<br>php-fpm默认监听 <code>listen = 127.0.0.1:9000</code> 为  <code>TCP socket</code>, 两者不一致</p>
+<pre><code>; The address on which to accept FastCGI requests.
+; Valid syntaxes are:
+;   &apos;ip.add.re.ss:port&apos;    - to listen on a TCP socket to a specific IPv4 address on
+;                            a specific port;
+;   &apos;[ip:6:addr:ess]:port&apos; - to listen on a TCP socket to a specific IPv6 address on
+;                            a specific port;
+;   &apos;port&apos;                 - to listen on a TCP socket to all addresses
+;                            (IPv6 and IPv4-mapped) on a specific port;
+;   &apos;/path/to/unix/socket&apos; - to listen on a unix socket.
+; Note: This value is mandatory.
+listen = 127.0.0.1:9000
+</code></pre><blockquote>
+<p>其中fastcgi_pass为配置nginx与php-fpm的交互路径，一般有两种方式<br> sock方式：fastcgi_pass    unix:/tmp/php-cgi.sock;<br> http方式：fastcgi_pass    127.0.0.1:9000;<br> 任选其中一种即可，但必须和php-fpm的配置一致</p>
+</blockquote>
+<p>这里我们使用 <code>fastcgi_pass 127.0.0.1:9000</code>;<br>nginx重启后浏览器访问显示 “Hello World!”,so 配置成功！</p>
+<h3 id="三、TCP-socket和unix-socket"><a href="#三、TCP-socket和unix-socket" class="headerlink" title="三、TCP socket和unix socket"></a>三、TCP socket和unix socket</h3><h4 id="1、TCP和unix-domain-socket方式对比"><a href="#1、TCP和unix-domain-socket方式对比" class="headerlink" title="1、TCP和unix domain socket方式对比"></a>1、TCP和unix domain socket方式对比</h4><p>其中TCP是IP加端口,可以跨服务器.而UNIX Domain Socket不经过网络,只能用于Nginx跟PHP-FPM都在同一服务器的场景</p>
+<ul>
+<li>TCP是使用TCP端口连接127.0.0.1:9000</li>
+<li>Socket是使用unix domain socket连接套接字/dev/shm/php-cgi.sock（很多教程使用路径/tmp，而路径/dev/shm是个tmpfs，速度比磁盘快得多）</li>
+</ul>
+<p>fastcgi_pass  unix:/tmp/php-cgi.sock<br>fastcgi_pass  127.0.0.1:9000</p>
+<p>理论上，unix socket 不走网络，效率高一些，但稳定性不是很理想，看这个测试 <a href="http://blog.csdn.net/liv2005/article/details/7741732" target="_blank" rel="external">http://blog.csdn.net/liv2005/article/details/7741732</a></p>
+<h4 id="2、路径"><a href="#2、路径" class="headerlink" title="2、路径"></a>2、路径</h4><p><code>UNIX Domain Socket:</code><br>Nginx &lt;=&gt; socket &lt;=&gt; PHP-FPM<br><code>TCP Socket(本地回环):</code><br>Nginx &lt;=&gt; socket &lt;=&gt; TCP/IP &lt;=&gt; socket &lt;=&gt; PHP-FPM<br><code>TCP Socket(Nginx和PHP-FPM位于不同服务器):</code><br>Nginx &lt;=&gt; socket &lt;=&gt; TCP/IP &lt;=&gt; 物理层 &lt;=&gt; 路由器 &lt;=&gt; 物理层 &lt;=&gt; TCP/IP &lt;=&gt; socket &lt;=&gt; PHP-FPM</p>
+<h4 id="4、mysql连接方式"><a href="#4、mysql连接方式" class="headerlink" title="4、mysql连接方式"></a>4、mysql连接方式</h4><p>像mysql命令行客户端连接mysqld服务也类似有这两种方式:<br>使用Unix Socket连接(默认):<br>mysql -uroot -p –protocol=socket –socket=/tmp/mysql.sock<br>使用TCP连接:<br>mysql -uroot -p –protocol=tcp –host=127.0.0.1 –port=3306</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -214,15 +325,11 @@ var _hmt = _hmt || [];
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nginx</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -230,75 +337,145 @@ var _hmt = _hmt || [];
         		<li class="article-tag-list-item">
         			<a href="/categories/nginx/" class="article-tag-list-link color1">nginx</a>
         		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/php/" class="article-tag-list-link color4">php</a>
-        		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://william-wqq.github.io/2017/08/26/nginx-vhost-build/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/24/php-install/" class="archive-article-date">
-  	<time datetime="2017-08-24T02:05:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-24</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/25/linux-netstat/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">netstat命令</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/24/php-install/">PHP安装</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/php/" class="article-tag-list-link color4">php</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、前言"><span class="toc-number">1.</span> <span class="toc-text">一、前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、虚拟主机"><span class="toc-number">2.</span> <span class="toc-text">二、虚拟主机</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、虚拟主机配置"><span class="toc-number">2.1.</span> <span class="toc-text">1、虚拟主机配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、修改nginx配置"><span class="toc-number">2.2.</span> <span class="toc-text">2、修改nginx配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3、安全组规则"><span class="toc-number">2.3.</span> <span class="toc-text">3、安全组规则</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、访问虚拟主机端口"><span class="toc-number">2.4.</span> <span class="toc-text">4、访问虚拟主机端口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5、问题解决"><span class="toc-number">2.5.</span> <span class="toc-text">5、问题解决</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、TCP-socket和unix-socket"><span class="toc-number">3.</span> <span class="toc-text">三、TCP socket和unix socket</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1、TCP和unix-domain-socket方式对比"><span class="toc-number">3.1.</span> <span class="toc-text">1、TCP和unix domain socket方式对比</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2、路径"><span class="toc-number">3.2.</span> <span class="toc-text">2、路径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4、mysql连接方式"><span class="toc-number">3.3.</span> <span class="toc-text">4、mysql连接方式</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
+        
+    </div>
+</aside>
+
+
+
+<!--友言-->
   
 
+  <!--来必力-->
     
+    <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTc5Ni82MzYy">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
+    
+
+  
+  
+  
+
+  
+
+  
 
 
           </div>
@@ -330,9 +507,9 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
