@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://william-wqq.github.io">
-  <title>视频 | William的博客</title>
+  <title>Composer安装 | William的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Photos 	Videos 	摄影  指弹_女儿情         指弹_友谊地久天长         指弹_Always with me">
-<meta property="og:type" content="website">
-<meta property="og:title" content="视频">
-<meta property="og:url" content="https://william-wqq.github.io/photos/videos.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Composer安装">
+<meta property="og:url" content="https://william-wqq.github.io/2017/09/25/composer-install/index.html">
 <meta property="og:site_name" content="William的博客">
-<meta property="og:description" content="Photos 	Videos 	摄影  指弹_女儿情         指弹_友谊地久天长         指弹_Always with me">
 <meta property="og:locale" content="zh">
-<meta property="og:updated_time" content="2017-09-01T02:04:48.004Z">
+<meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/09/composer.png">
+<meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/09/composer_succ.png">
+<meta property="og:image" content="https://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png">
+<meta property="og:updated_time" content="2017-09-25T09:01:30.238Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="视频">
-<meta name="twitter:description" content="Photos 	Videos 	摄影  指弹_女儿情         指弹_友谊地久天长         指弹_Always with me">
+<meta name="twitter:title" content="Composer安装">
+<meta name="twitter:image" content="https://william-wqq.github.io/assets/article_img/2017/09/composer.png">
   
     <link rel="alternative" href="/atom.xml" title="William的博客" type="application/atom+xml">
   
@@ -178,14 +179,14 @@ var _hmt = _hmt || [];
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-undefined" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-composer-install" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      视频
+      Composer安装
     </h1>
   
 
@@ -200,46 +201,44 @@ var _hmt = _hmt || [];
         </a>
         
         
-        <a href="/photos/videos.html" class="archive-article-date">
-  	<time datetime="2017-09-01T02:04:48.024Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-01</time>
+        <a href="/2017/09/25/composer-install/" class="archive-article-date">
+  	<time datetime="2017-09-25T08:35:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <link rel="stylesheet" href="./ins.css">
-<div class="photos-btn-wrap">
-	<a class="photos-btn" href="/photos">Photos</a>
-	<a class="photos-btn active" href="/photos/videos.html">Videos</a>
-	<a class="photos-btn" target="_blank" href="http://47.93.36.120/">摄影</a>
-</div>
-<center><h1>指弹_女儿情</h1></center>
-<hr>
-<center>
-<div class="video-container">
-<iframe height="100%" width="100%" src="http://player.youku.com/embed/XMjUzMzY4OTM3Ng==" frameborder="0" allowfullscreen>
-</iframe>
-</div>
-</center>
-<hr>
-<center><h1>指弹_友谊地久天长</h1></center>
-<hr>
-<center>
-<div class="video-container">
-<iframe height="100%" width="100%" src="http://player.youku.com/embed/XMjQ5MDExOTY2MA==" frameborder="0" allowfullscreen>
-</iframe>
-</div>
-</center>
-<hr>
-<center><h1>指弹_Always with me</h1></center>
-<hr>
-<center>
-<div class="video-container">
-<iframe height="100%" width="100%" src="http://player.youku.com/embed/XMjQ4MDQyNTQ0MA==" frameborder="0" allowfullscreen>
-</iframe>
-</div>
-</center>
+        <p><img src="/assets/article_img/2017/09/composer.png" alt="composer" title="composer"></p>
+<a id="more"></a>
+<h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>Composer是 PHP 用来管理依赖（dependency）关系的工具。你可以在自己的项目中声明所依赖的外部工具库（libraries），Composer<br>会帮你安装这些依赖的库文件。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>windows安装就不说了，很简单的傻瓜式安装。linux安装方法<br>1、 下载</p>
+<pre><code>curl -sS https://getcomposer.org/installer | php
+</code></pre><p>2、 全局安装</p>
+<pre><code>mv composer.phar /usr/local/bin/composer
+vi ~/.profile
+export PATH=$PATH:/usr/local/bin/composer
+source ~/.profile
+</code></pre><p>3、 测试<br><code>composer -v</code><br><img src="/assets/article_img/2017/09/composer_succ.png" alt="composer" title="composer安装成功"><br>安装成功</p>
+<h2 id="composer命令"><a href="#composer命令" class="headerlink" title="composer命令"></a>composer命令</h2><p>常用composer命令</p>
+<pre><code>composer install 安装
+composer update 更新vendor/*
+composer dump-autoload 更新自动加载类
+composer selfupdate  composer自我更新
+composer list  列出所有可用的命令
+composer init   初始化composer.json文件(就不劳我们自己费力创建啦)，会要求输入一些信息来描述我们当前的项目，还会要求输入依赖包
+composer install  读取composer.json内容，解析依赖关系，安装依赖包到vendor目录下
+composer update   更新最新的依赖关系到compsoer.lock文件，解析最新的依赖关系并且写入composer.lock文件
+composer search packagename 搜索包，packagename替换为你想查找的包名称
+composer require packagename 添加对packagename的依赖，packagename可修改为你想要的包名称
+composer show packagename
+composer self-update 更新 composer.phar文件自身
+composer command --help 以上所有命令都可以添加 --help选项查看帮助信息
+</code></pre><h3 id="友情链接"><a href="#友情链接" class="headerlink" title="友情链接"></a>友情链接</h3><p> composer: <a href="http://www.phpcomposer.com/" target="_blank" rel="external">http://www.phpcomposer.com/</a></p>
+<blockquote>
+<p><strong>本文作者</strong>: William<br><strong>本文链接</strong>: <a href="http://www.williamwqq.site/2017/09/25/composer-install/" target="_blank" rel="external">http://www.williamwqq.site/2017/09/25/composer-install/</a><br><strong>版权声明</strong>: 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank" rel="external">CC BY-NC-SA 3.0</a> 许可协议<a href="http://creativecommons.org/licenses/by-nc-sa/3.0" target="_blank" rel="external"><img src="https://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" alt="Creative Commons License"></a> 。转载请注明出处！</p>
+</blockquote>
+
       
 
       
@@ -248,6 +247,17 @@ var _hmt = _hmt || [];
       
       
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/composer/" class="article-tag-list-link color4">composer</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -297,7 +307,7 @@ var _hmt = _hmt || [];
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://william-wqq.github.io/photos/videos.html" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://william-wqq.github.io/2017/09/25/composer-install/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -309,6 +319,16 @@ var _hmt = _hmt || [];
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/26/nginx-vhost-build/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Nginx虚拟主机配置</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -322,6 +342,19 @@ var _hmt = _hmt || [];
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#简介"><span class="toc-number">1.</span> <span class="toc-text">简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-number">2.</span> <span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#composer命令"><span class="toc-number">3.</span> <span class="toc-text">composer命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#友情链接"><span class="toc-number">3.1.</span> <span class="toc-text">友情链接</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -391,7 +424,7 @@ var _hmt = _hmt || [];
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

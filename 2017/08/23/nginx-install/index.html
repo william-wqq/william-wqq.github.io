@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/08/aliyun_nginx.png">
 <meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/08/nginx_install_succ.png">
 <meta property="og:image" content="https://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png">
-<meta property="og:updated_time" content="2017-08-25T02:49:33.323Z">
+<meta property="og:updated_time" content="2017-09-08T09:09:00.587Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Nginx安装">
 <meta name="twitter:description" content="一、编译安装这种方式下载的文件是源码，安装复杂，手动去安装依赖、配置、编译.源码下载地址 http://nginx.org/download/ ,这里我们选择安装nginx-1.9.9 1、安装依赖库nginx依赖于pcre、zlib、opensslgzip模块需要zlib库rewrite模块需要pcre库ssl功能需要openssl库  prce  https://ftp.pcre.org/pu">
@@ -222,9 +222,19 @@ var _hmt = _hmt || [];
 <li>openssl  <a href="https://www.openssl.org/source/openssl-1.0.2l.tar.gz" target="_blank" rel="external">https://www.openssl.org/source/openssl-1.0.2l.tar.gz</a></li>
 </ul>
 <a id="more"></a>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">wget https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz</div><div class="line">tar -zxvf pcre-8.41.tar.gz</div><div class="line">mv pcre-8.41 pcre</div><div class="line">cd pcre</div><div class="line">./configure</div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
-<p>zlib和openssl安装方式同上</p>
-<h4 id="2、下载nginx"><a href="#2、下载nginx" class="headerlink" title="2、下载nginx"></a>2、下载nginx</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">wget http://nginx.org/download/nginx-1.9.9.tar.gz</div><div class="line">tar -zxvf nginx-1.9.9.tar.gz</div><div class="line">mv nginx-1.9.9 nginx</div><div class="line">cd nginx</div><div class="line">./configure --prefix=/usr/local/nginx --with-pcre=pcre --with-openssl=openssl --with-zlib=zlib</div><div class="line">make &amp;&amp; make install</div><div class="line"><span class="meta"></span></div><div class="line">#nginx相关文件存储位置</div><div class="line">nginx path prefix: "/usr/local/nginx"</div><div class="line">nginx binary file: "/usr/local/nginx/sbin/nginx"</div><div class="line">nginx configuration prefix: "/usr/local/nginx/conf"</div><div class="line">nginx configuration file: "/usr/local/nginx/conf/nginx.conf"</div><div class="line">nginx pid file: "/usr/local/nginx/logs/nginx.pid"</div><div class="line">nginx error log file: "/usr/local/nginx/logs/error.log"</div><div class="line">nginx http access log file: "/usr/local/nginx/logs/access.log"</div><div class="line">nginx http client request body temporary files: "client_body_temp"</div><div class="line">nginx http proxy temporary files: "proxy_temp"</div><div class="line">nginx http fastcgi temporary files: "fastcgi_temp"</div><div class="line">nginx http uwsgi temporary files: "uwsgi_temp"</div><div class="line">nginx http scgi temporary files: "scgi_temp"</div></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">wget https://ftp.pcre.org/pub/pcre/pcre-8.41.tar.gz</div><div class="line">tar -zxvf pcre-8.41.tar.gz</div><div class="line">cd pcre</div><div class="line">./configure --prefix=/usr/local/pcre</div><div class="line">make &amp;&amp; make install</div></pre></td></tr></table></figure>
+<ul>
+<li>使用./configure –help 可以查看可用的选项。一般常用的有 <code>--prefix=PREFIX</code> 这个选项的意思是定义软件包安装到哪里。到这里，笔者再提一个小小<br>　的约定，通常源码包都是安装在/usr/local/目录下的。我们把prce安装在/usr/local/prce下，那么这里就应该这样写<code>--prefix=/usr/local/prce</code>其<br>　他还有好多选项，如果你有耐心你可以挨个去看一看都有什么作用</li>
+<li>笔者在这里只定义了pcre的安装目录，其他都是默认。回车后，开始执行check操作</li>
+<li>等check结束后生成了Makefile文件。除了查看有没有生成Makefile文件来判定有没有完成./configure 的操作外，还可以通过这个命令 <code>echo $?</code> 来判<br>　定，如果是0，则表示上一步操作成功完成，否则就是没有成功。</li>
+<li>make进行编译。安装，在安装前，先确认上一步操作是否成功完成 <code>echo $?</code>。</li>
+<li>make install 会创建相应的目录以及文件。当完成安装后，会在/usr/local目录下多了一个pcre目录，这就是pcre所安装的目录了。</li>
+<li>zlib和openssl安装方式同上,但是openssl的配置是./config</li>
+</ul>
+<h4 id="2、下载nginx"><a href="#2、下载nginx" class="headerlink" title="2、下载nginx"></a>2、下载nginx</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">wget http://nginx.org/download/nginx-1.9.9.tar.gz</div><div class="line">tar -zxvf nginx-1.9.9.tar.gz</div><div class="line">mv nginx-1.9.9 nginx</div><div class="line">cd nginx</div><div class="line">./configure --prefix=/usr/local/nginx --with-pcre=lib/pcre-8.41 --with-openssl=lib/openssl-1.0.2l --with-zlib=lib/zlib-1.2.11</div><div class="line">make &amp;&amp; make install</div><div class="line"><span class="meta"></span></div><div class="line">#nginx相关文件存储位置</div><div class="line">nginx path prefix: "/usr/local/nginx"</div><div class="line">nginx binary file: "/usr/local/nginx/sbin/nginx"</div><div class="line">nginx configuration prefix: "/usr/local/nginx/conf"</div><div class="line">nginx configuration file: "/usr/local/nginx/conf/nginx.conf"</div><div class="line">nginx pid file: "/usr/local/nginx/logs/nginx.pid"</div><div class="line">nginx error log file: "/usr/local/nginx/logs/error.log"</div><div class="line">nginx http access log file: "/usr/local/nginx/logs/access.log"</div><div class="line">nginx http client request body temporary files: "client_body_temp"</div><div class="line">nginx http proxy temporary files: "proxy_temp"</div><div class="line">nginx http fastcgi temporary files: "fastcgi_temp"</div><div class="line">nginx http uwsgi temporary files: "uwsgi_temp"</div><div class="line">nginx http scgi temporary files: "scgi_temp"</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意：带版本的都是解压目录，否则为编译后的安装目录。使用–with-openssl=<openssl_dir>、–with-pcre=<pcre_dir>、–with-zlib=<zlib_dir>指定依赖的解压目录路径，否则报错</zlib_dir></pcre_dir></openssl_dir></p>
+</blockquote>
 <h4 id="3、配置nginx"><a href="#3、配置nginx" class="headerlink" title="3、配置nginx"></a>3、配置nginx</h4><p>运行<code>nginx -v</code>，提示没有该命令，说明nginx不是全局变量<br>执行<code>echo $PATH</code>,查看全局变量<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">root@william:~# echo $PATH</div><div class="line">/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games</div></pre></td></tr></table></figure></p>
 <p>(1)软连接<br><code>ln -s /usr/local/nginx/sbin/nginx /usr/sbin/nginx</code></p>
 <p>(2)暂时性<br>重新打开linux环境，就会失效,须重新配置<br><code>export PATH=$PATH:/usr/local/nginx/sbin</code></p>
@@ -233,11 +243,11 @@ var _hmt = _hmt || [];
 <h4 id="4、nginx版本"><a href="#4、nginx版本" class="headerlink" title="4、nginx版本"></a>4、nginx版本</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">root@william:~# nginx -v</div><div class="line">nginx version: nginx/1.9.9</div></pre></td></tr></table></figure>
 <p>安装成功</p>
 <h3 id="二、包安装"><a href="#二、包安装" class="headerlink" title="二、包安装"></a>二、包安装</h3><p>一般推荐这种安装方式，简单快速不容易出错 ，少了许多依赖配置,唯一的缺点不能指定安装特定nginx版本<br><code>apt-get install nginx</code> </p>
-<h3 id="三、nginx命令"><a href="#三、nginx命令" class="headerlink" title="三、nginx命令"></a>三、nginx命令</h3><h4 id="1、测试nginx配置文件"><a href="#1、测试nginx配置文件" class="headerlink" title="1、测试nginx配置文件"></a>1、测试nginx配置文件</h4><p><code>nginx -t</code></p>
+<h3 id="三、nginx命令"><a href="#三、nginx命令" class="headerlink" title="三、nginx命令"></a>三、nginx命令</h3><h4 id="1、测试nginx配置文件"><a href="#1、测试nginx配置文件" class="headerlink" title="1、测试nginx配置文件"></a>1、测试nginx配置文件</h4><p><code>nginx -t</code><br>重启之前要检查配置文件是否正确</p>
 <h4 id="2、启动"><a href="#2、启动" class="headerlink" title="2、启动"></a>2、启动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">#方法一</div><div class="line">/usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf </div><div class="line"></div><div class="line">#方法二</div><div class="line">cd /usr/local/nginx/sbin</div><div class="line">./nginx -c /usr/local/nginx/conf/nginx.conf</div><div class="line"></div><div class="line">#方法三</div><div class="line">nginx -c /usr/local/nginx/conf/nginx.conf`  #设置全局变量后</div></pre></td></tr></table></figure>
 <h4 id="3、重启"><a href="#3、重启" class="headerlink" title="3、重启"></a>3、重启</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nginx -s reload  ：修改配置后重新加载生效</div><div class="line">service nginx restart</div></pre></td></tr></table></figure>
 <h4 id="4、关闭nginx"><a href="#4、关闭nginx" class="headerlink" title="4、关闭nginx"></a>4、关闭nginx</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">nginx -s stop  ：快速停止nginx</div><div class="line">nginx -s quit  ：完整有序的停止nginx</div></pre></td></tr></table></figure>
-<p>其他的停止nginx 方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ps -ef | grep nginx    ：#查询nginx主进程号 </div><div class="line">kill -QUIT 主进程号     ：从容停止Nginx</div><div class="line">kill -TERM 主进程号     ：快速停止Nginx</div><div class="line">pkill -9 nginx         ：强制停止Nginx</div></pre></td></tr></table></figure></p>
+<p>其他的停止nginx 方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">ps -ef | grep nginx    ：#查询nginx主进程号</div><div class="line">kill -&quot;信号类型&quot;        /usr/local/nginx/logs/nginx.pid&quot;或者nginx的主进程号</div><div class="line">kill -QUIT 主进程号     ：从容停止Nginx</div><div class="line">kill -TERM 主进程号     ：快速停止Nginx</div><div class="line">pkill -9 nginx         ：强制停止Nginx</div><div class="line">kill  -HUP 主进程号     ：平滑重启Nginx</div><div class="line"></div><div class="line">USR1 重新打开日志文件，在切割日志时用途较大；</div><div class="line">USR2 平滑升级可执行程序</div><div class="line">WINCH 从容关闭工作进程</div></pre></td></tr></table></figure></p>
 <h3 id="四、阿里云"><a href="#四、阿里云" class="headerlink" title="四、阿里云"></a>四、阿里云</h3><p>1、修改端口号<br>本人在阿里云买了服务器，ubuntu系统的，nginx默认端口80被占用，修改成81端口，如果没有被占用则不需要修改，按照上述命令启动<br>查看监听端口<br><img src="/assets/article_img/2017/08/process_nginx.png" alt="nginx" title="nginx进程"></p>
 <p>2、配置防火墙<br>一般有阿里云设有防火墙，须添加安全组规则才能访问，如下图：<br><img src="/assets/article_img/2017/08/aliyun_nginx.png" alt="nginx" title="安全组规则"></p>
 <p>用分配的外网ip  XX.XX.XX.XX:81 访问<br><img src="/assets/article_img/2017/08/nginx_install_succ.png" alt="nginx" title="安装成功"><br>说明我们已经大功告成了！</p>
@@ -520,6 +530,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">gitHub</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">nginx</a>
               </li>
              
@@ -528,7 +542,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">gitHub</a>
+                <a href="javascript:void(0)" class="js-tag color4">vcs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -537,14 +555,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">node.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vcs</a>
               </li>
             
             <div class="clearfix"></div>
