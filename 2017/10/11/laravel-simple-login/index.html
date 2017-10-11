@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://william-wqq.github.io">
   <title>Laravel内置简单登录 | William的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、简介激活Laravel的Auth系统Laravel 利用 PHP 的新特性 trait 内置了非常完善好用的简单用户登录注册功能，适合一些不需要复杂用户权限管理的系统，例如公司内部用的简单管理系统。 二、安装1、运行命令 php artisan make:auth 运行成功显示Authentication scaffolding generated successfully. 2、web路由r">
+  <meta name="description" content="一、简介激活Laravel的Auth系统Laravel 利用 PHP 的新特性 trait 内置了非常完善好用的简单用户登录注册功能，适合一些不需要复杂用户权限管理的系统，例如公司内部用的简单管理系统。 二、安装1、运行命令 php artisan make:auth 运行成功显示Authentication scaffolding generated successfully.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Laravel内置简单登录">
 <meta property="og:url" content="https://william-wqq.github.io/2017/10/11/laravel-simple-login/index.html">
 <meta property="og:site_name" content="William的博客">
-<meta property="og:description" content="一、简介激活Laravel的Auth系统Laravel 利用 PHP 的新特性 trait 内置了非常完善好用的简单用户登录注册功能，适合一些不需要复杂用户权限管理的系统，例如公司内部用的简单管理系统。 二、安装1、运行命令 php artisan make:auth 运行成功显示Authentication scaffolding generated successfully. 2、web路由r">
+<meta property="og:description" content="一、简介激活Laravel的Auth系统Laravel 利用 PHP 的新特性 trait 内置了非常完善好用的简单用户登录注册功能，适合一些不需要复杂用户权限管理的系统，例如公司内部用的简单管理系统。 二、安装1、运行命令 php artisan make:auth 运行成功显示Authentication scaffolding generated successfully.">
 <meta property="og:locale" content="zh">
 <meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/10/laravel_login.png">
 <meta property="og:image" content="https://william-wqq.github.io/assets/article_img/2017/10/laravel_login_succ.png">
-<meta property="og:updated_time" content="2017-10-11T01:51:40.240Z">
+<meta property="og:updated_time" content="2017-10-11T01:56:46.958Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Laravel内置简单登录">
-<meta name="twitter:description" content="一、简介激活Laravel的Auth系统Laravel 利用 PHP 的新特性 trait 内置了非常完善好用的简单用户登录注册功能，适合一些不需要复杂用户权限管理的系统，例如公司内部用的简单管理系统。 二、安装1、运行命令 php artisan make:auth 运行成功显示Authentication scaffolding generated successfully. 2、web路由r">
+<meta name="twitter:description" content="一、简介激活Laravel的Auth系统Laravel 利用 PHP 的新特性 trait 内置了非常完善好用的简单用户登录注册功能，适合一些不需要复杂用户权限管理的系统，例如公司内部用的简单管理系统。 二、安装1、运行命令 php artisan make:auth 运行成功显示Authentication scaffolding generated successfully.">
 <meta name="twitter:image" content="https://william-wqq.github.io/assets/article_img/2017/10/laravel_login.png">
   
     <link rel="alternative" href="/atom.xml" title="William的博客" type="application/atom+xml">
@@ -215,6 +215,7 @@ var _hmt = _hmt || [];
 <h2 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h2><p>1、运行命令</p>
 <p><code>php artisan make:auth</code></p>
 <p>运行成功显示<code>Authentication scaffolding generated successfully.</code></p>
+<a id="more"></a>
 <p>2、web路由<br><code>routes\web.php</code>加入一下代码：</p>
 <pre><code>Auth::routes()
 </code></pre><p>主要实现权限的登录、用户注册、用户退出</p>

@@ -205,47 +205,9 @@ var _hmt = _hmt || [];
 <h2 id="二、安装"><a href="#二、安装" class="headerlink" title="二、安装"></a>二、安装</h2><p>1、运行命令</p>
 <p><code>php artisan make:auth</code></p>
 <p>运行成功显示<code>Authentication scaffolding generated successfully.</code></p>
-<p>2、web路由<br><code>routes\web.php</code>加入一下代码：</p>
-<pre><code>Auth::routes()
-</code></pre><p>主要实现权限的登录、用户注册、用户退出</p>
-<p>3、navicat创建数据库</p>
-<pre><code>数据库名：laravel
-字符集：utf8 -- UTF-8 Unicode
-排序规则：utf8_unicode_ci
-</code></pre><p>4、修改.env</p>
-<pre><code>DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=laravel
-DB_USERNAME=root
-DB_PASSWORD=
-</code></pre><p>5、修改config/database.php</p>
-<pre><code>mysql&apos; = [
-    &apos;charset&apos; =&gt; &apos;utf8&apos;,
-    &apos;collation&apos; =&gt; &apos;utf8_unicode_ci&apos;,
-]
-</code></pre><p>6、生成迁移文件<br>    <code>php artisan make:migration create_users_table</code></p>
-<pre><code>注意：php artisan make:auth系统已经生成迁移文件，直接执行迁移
-</code></pre><p>7、执行迁移，生成数据表<br>    <code>php artisan migrate</code></p>
-<p>8、生成填充文件<br>    <code>php artisan make:seeder UsersTableSeeder</code></p>
-<pre><code>public function run()
-    {
-    DB::table(&apos;users&apos;)-&gt;insert([
-        &apos;name&apos; =&gt; &apos;william&apos;,
-        &apos;email&apos; =&gt; &apos;william_wqq@163.com&apos;,
-        &apos;password&apos; =&gt; bcrypt(&apos;123456&apos;),
-    ]);
-   }
-</code></pre><p>9、执行填充，生成数据<br>    <code>php artisan db:seed</code></p>
-<pre><code>public function run()
-{
-    $this-&gt;call(UsersTableSeeder::class);
-}
-</code></pre><p>数据已经生插入到users表里。</p>
-<p>10、登陆<br>登录访问<a href="http://XX.XX.XX.XX/login" target="_blank" rel="external">http://XX.XX.XX.XX/login</a><br><img src="/assets/article_img/2017/10/laravel_login.png" alt="laravel"></p>
-<p>登陆成功<br><img src="/assets/article_img/2017/10/laravel_login_succ.png" alt="laravel"></p>
-<p>同样注册也能成功。</p>
-
+        
+          <a class="article-more-a" href="/2017/10/11/laravel-simple-login/#more">more >></a>
+        
       
 
       
