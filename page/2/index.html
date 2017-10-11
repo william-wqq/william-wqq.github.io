@@ -179,6 +179,105 @@ var _hmt = _hmt || [];
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-integrate-nginx-php" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/25/integrate-nginx-php/">整合Nginx和PHP</a>
+    </h1>
+  
+
+        <!-- 显示阅读数 -->
+        
+        
+        <a href="/2017/08/25/integrate-nginx-php/" class="archive-article-date">
+  	<time datetime="2017-08-25T02:43:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、阿里云Linux整合Nginx和PHP"><a href="#一、阿里云Linux整合Nginx和PHP" class="headerlink" title="一、阿里云Linux整合Nginx和PHP"></a>一、阿里云Linux整合Nginx和PHP</h3><h4 id="1、nginx和php"><a href="#1、nginx和php" class="headerlink" title="1、nginx和php"></a>1、nginx和php</h4><blockquote>
+<p>nginx本身不能处理PHP，它只是个web服务器，当接收到请求后，如果是php请求，则发给<code>php解释器</code>处理，并把结果返回给客户端。<br>nginx一般是把请求发<code>fastcgi管理进程</code>处理，fascgi管理进程选择<code>cgi子进程</code>处理结果并返回,本文以<code>php-fpm</code>为例介绍如何使nginx支持PHP<br>PHP-FPM是一个PHP FastCGI管理器，是只用于PHP的,可以在 <a href="http://php-fpm.org/download" target="_blank" rel="external">http://php-fpm.org/download</a> 下载得到.<br>PHP-FPM其实是PHP源代码的一个补丁，旨在将FastCGI进程管理整合进PHP包中。必须将它patch到你的PHP源代码中，在编译安装PHP后才可以使用。<br>新版PHP已经集成php-fpm了，不再是第三方的包了，推荐使用。PHP-FPM提供了更好的PHP进程管理方式，可以有效控制内存和进<br>程、可以平滑重载PHP配置，比<code>spawn-fcgi</code>具有更多优点，所以被PHP官方收录了。在./configure的时候带 <code>–enable-fpm</code>参数即<br>可开启PHP-FPM，其它参数都是配置php的，具体选项含义可以查看这里。</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2017/08/25/integrate-nginx-php/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">nginx</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">php</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/nginx/" class="article-tag-list-link color1">nginx</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/php/" class="article-tag-list-link color4">php</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/25/integrate-nginx-php/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-php-install" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -503,105 +602,6 @@ var _hmt = _hmt || [];
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/08/23/nginx-uninstall/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-git-install" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/22/git-install/">Git安装</a>
-    </h1>
-  
-
-        <!-- 显示阅读数 -->
-        
-        
-        <a href="/2017/08/22/git-install/" class="archive-article-date">
-  	<time datetime="2017-08-22T05:42:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、前言"><a href="#一、前言" class="headerlink" title="一、前言"></a>一、前言</h3><p>在你开始使用 Git 前，需要将它安装在你的计算机上。 可以通过<code>软件包</code>或者其它<code>安装程序</code>来安装，或者<code>下载源码编译</code>安装。</p>
-<h3 id="二、windows上安装"><a href="#二、windows上安装" class="headerlink" title="二、windows上安装"></a>二、windows上安装</h3><p>在windows上使用安装程序安装，下载后傻瓜式安装即可</p>
-<ul>
-<li><a href="https://git-scm.com/download/win" target="_blank" rel="external">Git官网</a></li>
-<li><a href="https://git-for-windows.github.io/" target="_blank" rel="external">Git for windows</a></li>
-<li><a href="https://desktop.github.com/" target="_blank" rel="external">GitHub for Windows</a></li>
-</ul>
-        
-          <a class="article-more-a" href="/2017/08/22/git-install/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">gitHub</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/git/" class="article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/22/git-install/">展开全文 >></a>
         </p>
       
 
